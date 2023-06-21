@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/views/notFound.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Chitietsp1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Chitietsp1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/chitietsp2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/chitietsp2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/chitietsp3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/chitietsp3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/css/ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/css/ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/dangky.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dangky.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/dangnhap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dangnhap.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/danhmuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/danhmuc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/danhmuc2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/danhmuc2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/danhmuc3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/danhmuc3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/danhmuccn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/danhmuccn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/danhmuclist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/danhmuclist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/dienthoai.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/dienthoai.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/giohang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/listkhac.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/listkhac.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/listlt.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/listlt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/listpk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/listpk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/maytinhbang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/maytinhbang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/plugins/owlcarousel/owl.carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/plugins/owlcarousel/owl.carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/quenmk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/quenmk.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/views" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RQl4Nfk2rLIVORy6xocVfeflzw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\demo\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\demo\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="" />
+      <created>1687189996464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687189996464</updated>
+      <workItem from="1687189997335" duration="520000" />
+      <workItem from="1687190541456" duration="2103000" />
+      <workItem from="1687222019319" duration="2789000" />
+      <workItem from="1687224862147" duration="2855000" />
+      <workItem from="1687227814032" duration="3168000" />
+      <workItem from="1687278245574" duration="2025000" />
+      <workItem from="1687319113962" duration="4041000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
