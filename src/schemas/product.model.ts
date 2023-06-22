@@ -1,15 +1,5 @@
 import { Schema,model } from "mongoose";
-
-
-interface IProduct{
-    name: string;
-    model: string;
-    place: string;
-    category_id: object ;
-    vote: number;
-    created_at: Date;
-}
-const productSchema = new Schema<IProduct>({
+const productSchema = new Schema({
     name: String,
     model: String,
     place: String,
@@ -17,5 +7,5 @@ const productSchema = new Schema<IProduct>({
     vote: Number,
     created_at: Date,
 })
-const Product = model<IProduct>('Product',productSchema)
+const Product = model('Product',productSchema)
 export  {Product}

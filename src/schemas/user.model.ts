@@ -1,19 +1,11 @@
 import {Schema, model} from "mongoose";
-interface IUser {
-    userName : string;
-    image_Id : number;
-    email : string;
-    role : string;
-    password : string;
-    address : string;
-}
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema({
     userName : String,
-    image_Id : Number,
+    image_Id :  { type: Schema.Types.ObjectId, ref: "image" },
     email : String,
     role : String,
     password : String,
     address : String
 })
-const user =  model<IUser>("user",userSchema);
+const user =  model("user",userSchema);
 export {user}
