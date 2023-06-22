@@ -1,5 +1,5 @@
 import { Schema,model } from "mongoose";
-interface Iproduct{
+interface IProduct{
     id: number;
     name: string;
     model: string;
@@ -8,7 +8,7 @@ interface Iproduct{
     vote: number;
     created_at: Date;
 }
-const productSchema = new Schema<Iproduct>({
+const productSchema = new Schema<IProduct>({
     id: Number,
     name: String,
     model: String,
@@ -17,5 +17,5 @@ const productSchema = new Schema<Iproduct>({
     vote: Number,
     created_at: Date,
 })
-const Product = model<Iproduct>('Product',productSchema)
+const Product = model<IProduct>('Product',productSchema)
 export  {Product}
