@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/tsc-watch/dist/lib/tsc-watch.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tsc-watch/dist/lib/tsc-watch.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/controllers/profileUser.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
+>>>>>>> c061625 (build profileUser.controller.ts)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +74,7 @@
       <recent name="$PROJECT_DIR$/src/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\shopping_project\src\views" />
       <recent name="D:\demo\src" />
     </key>
   </component>
@@ -91,7 +98,7 @@
       <workItem from="1687335618663" duration="239000" />
       <workItem from="1687335866453" duration="6469000" />
       <workItem from="1687403725653" duration="258000" />
-      <workItem from="1687404103440" duration="3895000" />
+      <workItem from="1687404103440" duration="13132000" />
     </task>
     <servers />
   </component>
