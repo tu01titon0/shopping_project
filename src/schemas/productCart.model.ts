@@ -1,11 +1,7 @@
 import { Schema,model } from "mongoose";
-interface IProductCart {
-    price_id : number;
-    user_id : number
-}
-const productCartSchema = new Schema <IProductCart>({
-    price_id : Number,
-    user_id : Number,
+const productCartSchema = new Schema ({
+    detail_id :  { type: Schema.Types.ObjectId, ref: "productDetail" },
+    user_id :  { type: Schema.Types.ObjectId, ref: "user" },
 })
-const productCart =  model<IProductCart>("user",productCartSchema);
+const productCart =  model("user",productCartSchema);
 export {productCart}
