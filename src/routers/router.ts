@@ -3,10 +3,6 @@ import { Router } from "express"
 const router = Router()
 import HomeController from "../controllers/home.controller";
 
-router.get('/', (req, res) => {
-    HomeController.getHomePage(req, res).catch(err => {
-        console.log(err.message);
-    })
-})
+router.get('/', HomeController.getHomePage)
 
 export default router
