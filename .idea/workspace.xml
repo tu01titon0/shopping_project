@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/public/css/sb-admin-2.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/public/css/sb-admin-2.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/public/img/undraw_posting_photo.svg" afterDir="false" />
@@ -1837,6 +1838,7 @@
       <change afterPath="$PROJECT_DIR$/src/public/vendor/jquery/jquery.slim.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/public/vendor/jquery/jquery.slim.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/public/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" />
@@ -1854,9 +1856,32 @@
       <change beforePath="$PROJECT_DIR$/dist/src/routers/router.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/src/routers/router.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/home.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/home.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/ConnectDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ConnectDB.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Chitietsp1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/chitietsp2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/chitietsp3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/dangky.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/dangnhap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/danhmuc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/danhmuc2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/danhmuc3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/danhmuccn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/danhmuclist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/dienthoai.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/giohang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/listkhac.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/listlt.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/listpk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/maytinhbang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/quenmk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/dangnhap.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/dangnhap.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1891,25 +1916,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "fileManagerUser",
-    "javascript.nodejs.core.library.configured.version": "18.14.0",
-    "javascript.nodejs.core.library.typings.version": "18.14.0",
-    "last_opened_file_path": "D:/shopping_project/src/views",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\shopping_project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fileManagerUser&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/casemodule4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\casemodule4\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\shopping_project\src\views" />
@@ -1942,6 +1967,8 @@
       <workItem from="1687335866453" duration="6469000" />
       <workItem from="1687403725653" duration="258000" />
       <workItem from="1687404103440" duration="3895000" />
+      <workItem from="1687408580184" duration="2267000" />
+      <workItem from="1687416126085" duration="10221000" />
     </task>
     <servers />
   </component>
