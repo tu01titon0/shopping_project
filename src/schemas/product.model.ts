@@ -1,6 +1,6 @@
 import { Schema,model } from "mongoose";
 interface Iproduct{
-    id: number;
+    id: number pri;
     name: string;
     model: string;
     place: string;
