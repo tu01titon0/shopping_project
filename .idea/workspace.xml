@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/schemas/user.model.ts" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template" beforeDir="false" afterPath="$PROJECT_DIR$/template" afterDir="false" />
->>>>>>> 2a8ee3b (add file template)
+      <change afterPath="$PROJECT_DIR$/src/schemas/productCart.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/product.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas/productDetail.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schemas/productDetail.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Rebasing master",
+    "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "16.13.0",
     "javascript.nodejs.core.library.typings.version": "16.18.36",
     "last_opened_file_path": "/Users/macos/Documents/codegym/shopping_project/src/public",
@@ -90,7 +87,7 @@
       <workItem from="1687335533978" duration="2000" />
       <workItem from="1687335547321" duration="44000" />
       <workItem from="1687335618663" duration="239000" />
-      <workItem from="1687335866453" duration="7903000" />
+      <workItem from="1687335866453" duration="6469000" />
     </task>
     <servers />
   </component>

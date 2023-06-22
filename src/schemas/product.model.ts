@@ -1,21 +1,21 @@
 import { Schema,model } from "mongoose";
-interface Iproduct{
-    id: number pri;
+
+
+interface IProduct{
     name: string;
     model: string;
     place: string;
-    category_id: number;
+    category_id: object ;
     vote: number;
     created_at: Date;
 }
-const productSchema = new Schema<Iproduct>({
-    id: Number,
+const productSchema = new Schema<IProduct>({
     name: String,
     model: String,
     place: String,
-    category_id: Number,
+    category_id: { type: Schema.Types.ObjectId, ref: "Category" },
     vote: Number,
     created_at: Date,
 })
-const Product = model<Iproduct>('Product',productSchema)
+const Product = model<IProduct>('Product',productSchema)
 export  {Product}
