@@ -13,22 +13,21 @@ router.get('/login', HomeController.getLoginPage);
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/login123'
+    failureRedirect: '/'
 }));
-router.get(
-    '/login/google',
-    passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+// router.get(
+//     '/login/google',
+//     passport.authenticate('google', { scope: ['profile', 'email'] })
+// );
+// router.get(
+//     '/google/callback',
 
-router.get(
-    '/google/callback',
+//     passport.authenticate('google'),
 
-    passport.authenticate('google'),
-
-    (req, res) => {
-        res.send('You are authenticated');
-    }
-);
+//     (req, res) => {
+//         res.send('You are authenticated');
+//     }
+// );
 
 
 
