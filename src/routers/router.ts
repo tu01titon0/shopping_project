@@ -10,26 +10,25 @@ router.get('/', HomeController.getHomePage)
 
 
 router.get('/login', HomeController.getLoginPage);
-router.post('/login',(req,res)=>{
-    console.log(123123)
-})
-// router.post('/login', passport.authenticate('local', {
-//     successRedirect: '/',
-//     failureRedirect: '/login'
-// }));
-// router.get(
-//     '/login/google',
-//     passport.authenticate('google', { scope: ['profile', 'email'] })
-// );
-// router.get(
-//     '/google/callback',
-//
-//     passport.authenticate('google'),
-//
-//     (req, res) => {
-//         res.send('You are authenticated');
-//     }
-// );
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login123'
+}));
+router.get(
+    '/login/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+router.get(
+    '/google/callback',
+
+    passport.authenticate('google'),
+
+    (req, res) => {
+        res.send('You are authenticated');
+    }
+);
 
 
 
