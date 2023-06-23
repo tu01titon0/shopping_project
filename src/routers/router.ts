@@ -8,14 +8,13 @@ import ProfileUserController from "../controllers/profileUser.controller";
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
 
-
-
 router.get('/login', HomeController.getLoginPage);
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/'
+    failureRedirect: '/login'
 }));
+
 // router.get(
 //     '/login/google',
 //     passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -29,8 +28,5 @@ router.post('/login', passport.authenticate('local', {
 //         res.send('You are authenticated');
 //     }
 // );
-
-
-
 
 export default router

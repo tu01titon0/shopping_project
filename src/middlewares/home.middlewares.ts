@@ -10,8 +10,7 @@ passport.use(new LocalStrategy(async function verify(username: string, password:
     if (User.password !== password) {
         return cb(null, false, { message: 'Incorrect username or password.' });
     }
-    
-    return cb(null, user);
+    return cb(null, User);
 }))
 
 passport.serializeUser((user: any, cb)  => {

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/profileUser.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/profileUser.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +59,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\shopping_project\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/macos/Documents/codegym/shopping_project/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
