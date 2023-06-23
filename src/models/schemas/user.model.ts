@@ -8,21 +8,4 @@ const userSchema = new Schema({
     address : String
 })
 const user =  model("user",userSchema);
-// let newUser = new user({
-//         userName : "admin",
-//         email : "duc2710203",
-//         role : "admin",
-//         password : "123",
-//         address : "ngũ phúc kim thành hải dương"
-// }
-// );
-//
-// // Lưu tài liệu vào cơ sở dữ liệu
-// newUser.save()
-//     .then(() => {
-//         console.log('Đã lưu tài liệu vào MongoDB');
-//     })
-//     .catch((error) => {
-//         console.error('Lỗi lưu tài liệu vào MongoDB:', error);
-//     });
 export {user}

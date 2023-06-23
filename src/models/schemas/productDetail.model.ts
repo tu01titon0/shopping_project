@@ -7,3 +7,4 @@ const productDetailSchema = new Schema({
 })
 const ProductDetail = model('ProductDetail',productDetailSchema)
 export  {ProductDetail}
+
