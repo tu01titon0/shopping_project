@@ -2,11 +2,12 @@ import express from "express";
 import { Router } from "express"
 import passport from "../middlewares/home.middlewares";
 const router = Router()
-
 import HomeController from "../controllers/home.controller";
-import {user} from "../models/schemas/user.model";
+import ProfileUserController from "../controllers/profileUser.controller";
 
 router.get('/', HomeController.getHomePage)
+router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
+
 
 
 router.get('/login', HomeController.getLoginPage);
