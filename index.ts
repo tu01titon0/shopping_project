@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 import path from "path";
 import router from "./src/routers/router";
 import {ConnectDB} from "./src/models/ConnectDB";
+import passport from "passport";
+import session from "express-session";
+// import livereload from "connect-livereload";
 
 const app = express();
 const port = 2759
@@ -26,6 +29,30 @@ app.use(express.static('./src/public'))
 
 app.set('view engine',"ejs")
 app.set("views", "./src/views")
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+// app.use(livereload());
+app.use(passport.initialize());
+app.use(passport.session());
+app.set('view engine',"ejs")
+app.set("views", "./src/views")
+app.use(router);
+app.use('/',router);
+// viet middlewares chinh sua res
+
+app.use((req: any, res: any, next: any)=> {
+    if (req.isAuthenticated()) {
+        res.locals.userLogin = req.user
+        next();
+    } else {
+        res.redirect('/login')
+    }
+})
 
 app.use(router);
 

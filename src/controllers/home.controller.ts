@@ -3,7 +3,7 @@ class HomeController {
         res.render('index')
     }
     static getLoginPage(req: any, res: any): any {
-        res.render('dangnhap')
+        res.render('login')
     }
 }
 
