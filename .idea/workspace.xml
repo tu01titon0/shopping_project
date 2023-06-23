@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging fileManagerUser",
+    "git-widget-placeholder": "fileManagerUser",
     "javascript.nodejs.core.library.configured.version": "18.15.0",
     "javascript.nodejs.core.library.typings.version": "18.15.0",
     "last_opened_file_path": "C:/casemodule4",

@@ -9,7 +9,7 @@ const userSchema = new Schema({
 })
 const user =  model("user",userSchema);
 // let newUser = new user({
-//         userName : "duc anh",
+//         userName : "admin",
 //         email : "duc2710203",
 //         role : "admin",
 //         password : "123",
