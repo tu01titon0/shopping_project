@@ -4,6 +4,7 @@ import passport from "../middlewares/home.middlewares";
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
+import {ProductController} from "../controllers/product.controller";
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -14,6 +15,8 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
 }));
+
+router.get('/product/:id', ProductController.productDetail);
 
 // router.get(
 //     '/login/google',
