@@ -1,9 +1,9 @@
 class HomeController {
     static getHomePage(req: any, res: any): any {
-        res.render('index')
+        res.render('index', {user: req.user});
     }
     static getLoginPage(req: any, res: any): any {
-        res.render('login')
+        res.render('login', {user: req.user})
     }
 }
 
