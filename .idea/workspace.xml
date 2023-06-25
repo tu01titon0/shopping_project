@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/middlewares/login.middlewares.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/profileUser.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/profileUser.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/home.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/home.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schemas/category.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/category.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schemas/image.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/image.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schemas/productCart.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/productCart.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schemas/productDetail.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/productDetail.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/schemas/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/user.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
@@ -53,7 +50,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging fileManagerUser&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fileManagerUser&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.0&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/casemodule4&quot;,
@@ -102,7 +99,10 @@
       <workItem from="1687408580184" duration="2267000" />
       <workItem from="1687416126085" duration="10607000" />
       <workItem from="1687534568429" duration="2035000" />
-      <workItem from="1687536700946" duration="3292000" />
+      <workItem from="1687536700946" duration="3721000" />
+      <workItem from="1687591325849" duration="2994000" />
+      <workItem from="1687619714988" duration="1429000" />
+      <workItem from="1687653661980" duration="604000" />
     </task>
     <servers />
   </component>

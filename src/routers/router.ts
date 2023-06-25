@@ -1,6 +1,6 @@
 import express from "express";
 import { Router } from "express"
-import passport from "../middlewares/home.middlewares";
+import passport from "../middlewares/login.middlewares";
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
@@ -14,6 +14,7 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
 }));
+
 
 // router.get(
 //     '/login/google',

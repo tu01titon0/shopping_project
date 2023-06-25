@@ -7,5 +7,7 @@ const userSchema = new Schema({
     password : String,
     address : String
 })
+
+
 const user =  model("user",userSchema);
 export {user}
