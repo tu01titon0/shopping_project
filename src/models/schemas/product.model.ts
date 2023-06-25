@@ -1,14 +1,17 @@
-import { Schema,model } from "mongoose";
+import {Schema, model} from "mongoose";
+
 const productSchema = new Schema({
     name: String,
     model: String,
     place: String,
-    category_id: { type: Schema.Types.ObjectId, ref: "Category" },
+    category_id: {type: Schema.Types.ObjectId, ref: "Category"},
     vote: Number,
     created_at: Date,
     color: String,
     price: Number,
     quantity: Number
 })
-const Product = model('Product',productSchema)
-export  {Product}
+
+const Product = model('Product', productSchema)
+
+export {Product}

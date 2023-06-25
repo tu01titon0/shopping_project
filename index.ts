@@ -39,7 +39,6 @@ app.set('view engine', "ejs")
 app.set("views", "./src/views")
 app.use(router);
 app.use('/', router);
-// app.use('/',router);
 
 // viet middlewares chinh sua res
 
