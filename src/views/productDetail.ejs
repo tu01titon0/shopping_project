@@ -37,18 +37,14 @@
                 <article class="gallery-wrap">
                     <div class="img-big-wrap">
                         <div><a href="chitietsp2.html"><img
-                                        src="https://techzones.vn/Data/Sites/1/Product/16252/techzones-apple-watch-4-hermes-stainless-steel-case-with-fauve-barenia-leather-single-tour-1.jpg"></a>
+                                        src="<%= images[0].imageUrl %>"></a>
                         </div>
                     </div> <!-- slider-product.// -->
                     <div class="thumbs-wrap">
+                        <% images.forEach(image => { %>
                         <a href="#" class="item-thumb enlarge-image"> <img
-                                    src="https://techzones.vn/Data/Sites/1/Product/16252/techzones-apple-watch-4-hermes-stainless-steel-case-with-fauve-barenia-leather-single-tour-2.jpg"></a>
-                        <a href="#" class="item-thumb enlarge-image"> <img
-                                    src="https://techzones.vn/Data/Sites/1/Product/16247/techzones-apple-watch-hermes-stainless-steel-case-with-bleu-indigo-swift-leather-single-tour.jpg"></a>
-                        <a href="#" class="item-thumb enlarge-image"> <img
-                                    src="https://techzones.vn/Data/Sites/1/Product/16247/techzones-apple-watch-hermes-stainless-steel-case-with-bleu-indigo-swift-leather-single-tour-1.jpg"></a>
-                        <a href="#" class="item-thumb enlarge-image"> <img
-                                    src="https://techzones.vn/Data/Sites/1/Product/16247/techzones-apple-watch-hermes-stainless-steel-case-with-bleu-indigo-swift-leather-single-tour-2.jpg"></a>
+                                    src="<%= image.imageUrl %>"></a>
+                        <% }) %>
                     </div>
                 </article> <!-- gallery-wrap .end// -->
             </aside>
