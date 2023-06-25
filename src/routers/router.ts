@@ -17,7 +17,6 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 router.get('/product/:id', ProductController.productDetail);
-
 // router.get(
 //     '/login/google',
 //     passport.authenticate('google', { scope: ['profile', 'email'] })

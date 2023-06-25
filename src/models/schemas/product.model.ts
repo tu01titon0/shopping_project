@@ -9,7 +9,9 @@ const productSchema = new Schema({
     created_at: Date,
     color: String,
     price: Number,
-    quantity: Number
+    quantity: Number,
+    status: String,
+    description: String
 })
 
 const Product = model('Product', productSchema)
