@@ -6,6 +6,9 @@ const productSchema = new Schema({
     category_id: { type: Schema.Types.ObjectId, ref: "Category" },
     vote: Number,
     created_at: Date,
+    color: String,
+    price: Number,
+    quantity: Number
 })
 const Product = model('Product',productSchema)
 export  {Product}

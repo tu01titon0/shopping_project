@@ -1,13 +1,9 @@
-import {Product} from "../models/schemas/product.model";
-
 class HomeController {
     static getHomePage(req: any, res: any): any {
-        const listProduct = Product.find()
-        console.log(listProduct)
-        res.render('index')
+        res.render('index', {user: req.user});
     }
     static getLoginPage(req: any, res: any): any {
-        res.render('login')
+        res.render('login', {user: req.user})
     }
 }
 

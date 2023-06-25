@@ -1,7 +1,7 @@
 import { Schema,model } from "mongoose";
 const productCartSchema = new Schema ({
-    detail_id :  { type: Schema.Types.ObjectId, ref: "productDetail" },
+    product_id :  { type: Schema.Types.ObjectId, ref: "Product" },
     user_id :  { type: Schema.Types.ObjectId, ref: "user" },
 })
-const productCart =  model("productCart",productCartSchema);
+const productCart =  model("productCart", productCartSchema);
 export {productCart}
