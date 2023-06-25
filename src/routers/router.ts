@@ -16,7 +16,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }));
 
-router.get('/product/:id', ProductController.productDetail);
+router.get('/product', ProductController.productDetail);
 
 // router.get(
 //     '/login/google',
