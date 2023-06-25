@@ -1,6 +1,7 @@
 import express from "express";
-import { Router } from "express"
+import {Router} from "express"
 import passport from "../middlewares/home.middlewares";
+
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
@@ -17,6 +18,8 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 router.get('/product', ProductController.productDetail);
+
+router.get('/search', ProductController.searchProducts);
 
 // router.get(
 //     '/login/google',
