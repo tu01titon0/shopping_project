@@ -5,9 +5,10 @@ class HomeController {
     static async getHomePage(req: any, res: any) {
         try{
 
-            const product = await Product.find().populate('category_id');
-            const images = await Image.findOne({product_id: product[0]._id.toString()});
-            return  res.render('index', {user: req.user, product, images});
+            const products = await Product.find().populate('category_id');
+            const images = await Promise.all(products.map(product => Image.find({product_id: product._id})))
+
+            return  res.render('index', {user: req.user, product:products, images});
         }catch (err){
             console.log(err)
         }

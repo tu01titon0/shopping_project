@@ -16,7 +16,6 @@ export class ProductController {
 
     static async newProduct(req, res) {
         const categories = await Category.find();
-        console.log(categories)
         res.render('admin/newProduct', {user: req.user, categories: categories});
     }
 
@@ -63,7 +62,6 @@ export class ProductController {
             const imageArray = await Promise.all(products.map(product => Image.find({product_id: product._id})));
             const view = req.query.views;
             const grid = (view === 'grid');
-
             res.render('productsSearch', {user: req.user, products, imageArray, keywordSearch, grid});
         } catch (err) {
             console.log(err.message);

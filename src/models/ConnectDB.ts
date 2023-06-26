@@ -10,7 +10,7 @@ export class ConnectDB {
 //             try {
 //                 // Tạo 100 danh mục
 //                 const categories = [];
-//                 for (let i = 0; i < 100; i++) {
+//                 for (let i = 8; i < 100; i++) {
 //                     const category = new Category({name: `Category ${i + 1}`});
 //                     await category.save();
 //                     categories.push(category);

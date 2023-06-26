@@ -55,7 +55,7 @@
                             <div class="col-md-4 img-1">
                                 <a href="/product?id=<%= product[i].id %>">
                                     <img border="0"
-                                         src="<%= images.imageUrl %>"
+                                         src="<%= images[i][0].imageUrl %>"
                                          width="550" height="374" class="d-block w-500 " alt="1">
                                 </a>
                             </div>
@@ -78,7 +78,7 @@
         <% for (var i = 0; i < 3; i++) { %>
         <div class="col-sm-2">
             <a href="/product?id=<%= product[i].id %>">
-                <img src="<%= images.imageUrl %>"
+                <img src="<%= images[i][0].imageUrl %>"
                      width="110" height="80">
             </a>
         </div>
@@ -106,10 +106,10 @@
         <% for (let i = 0; i < 8; i++) { %>
         <div class="col-md-3">
             <figure class="card card-product-grid">
-                <div class="img-wrap"><img src="<%= images.imageUrl %>"></div>
+                <div class="img-wrap"><img src="<%= images[i][0].imageUrl %>"></div>
 
                 <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title"><%= product[i].name %></a>
+                    <a href="/product?id=<%=product[i]._id%>" class="title"><%= product[i].name %></a>
                     <div class="price mt-2">$<%= product[i].price %></div> <!-- price-wrap.// -->
                 </figcaption>
             </figure>
@@ -117,7 +117,7 @@
         <% } %>
 
     </div>
-    <a href="danhmuc.html" class="btn-light">
+    <a href="/search?keyword=" class="btn-light">
         <p align="center">Xem tất cả sản phẩm <i class="fas fa-spinner"></i>
         </p>
     </a>
@@ -131,18 +131,21 @@
     <div id="carouselExampleControls1" class="carousel slide2 " data-ride="carousel">
         <div class="carousel-inner container">
             <% for(let i = 0 ; i < 2; i++){ %>
+
             <div class="carousel-item <% if (i === 0){ %> active<% } %>">
                 <div class="row container card-bg border-bottom border-right border-left shadow-sm">
                     <% for(let j = i ; j < i + 4; j++){ %>
-                    <div class="col-sm-3 border-right card-newsp">
-                        <a href="chitietsp2.html">
-                            <img src="<%= images.imageUrl %>"
-                                 width="140px" height="140px" class="center pic-1">
-                        </a>
-                        <p align="center" class="name-spnew"><%= product[j].name %></p>
-                        <p align="center" class="card-title"><%= product[j].description %></p>
-                        <p align="center" class="card-text">$<%= product[j].price %></p>
-                    </div>
+                    <%if (product[j].status==="Active"){%>
+                        <div class="col-sm-3 border-right card-newsp">
+                            <a href="/product?id=<%=product[i]._id%>">
+                                <img src="<%= images[j][0].imageUrl %>"
+                                     width="140px" height="140px" class="center pic-1">
+                            </a>
+                            <p align="center" class="name-spnew"><%= product[j].name %></p>
+                            <p align="center" class="card-title"><%= product[j].description %></p>
+                            <p align="center" class="card-text">$<%= product[j].price %></p>
+                        </div>
+                    <% } %>
                     <% } %>
 
                 </div>
@@ -165,86 +168,25 @@
     <p class="title-newsp" align="center">Gợi ý </p>
     <div id="carouselExampleControls2" class="carousel slide2 " data-ride="carousel">
         <div class="carousel-inner container">
-            <div class="carousel-item active">
-                <div class="row container card-bg border-bottom border-right border-left shadow-sm">
-                    <div class="col-sm-3 border-right card-newsp">
-                        <a href="chitietsp2.html">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/715aC71nXEL._AC_SL1500_.jpg"
-                                 width="140px" height="140px" class="center pic-1">
-                        </a>
-                        <p align="center" class="name-spnew">Polaroid Originals</p>
-                        <p align="center" class="card-title">Accepts i-Type 600 Instant Film</p>
-                        <p align="center" class="card-text">$199</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://images.squarespace-cdn.com/content/v1/582e233a46c3c4327910c767/1501179625260-ATX2H9M87STYD1U8Z80O/ke17ZwdGBToddI8pDm48kMtiXMEMZ8ID8MVhA-T_Qc9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIfy9uRsqnknGrsPwiW8VdnsJxMq6FvgYbxptNsO-6IOIKMshLAGzx4R3EDFOm1kBS/1495641624000_img_802918_3.jpg?format=1500w"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">DJI Spark Quadcopter</p>
-                        <p align="center" class="card-title">2-Axis Stabilized Camera</p>
-                        <p align="center" class="card-text">$379</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://anhducdigital.vn/media/product/3944_instax_mini_9_ice_blue.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Fujifilm instax mini 9</p>
-                        <p align="center" class="card-title">Accepts Fujifilm Instant Film</p>
-                        <p align="center" class="card-text">$99</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <a href="chitietsp2.html">
-                            <img src="https://didongthongminh.vn/upload_images/2017/10/apple-ipadpro12.9-4g-qsd-grey.png"
-                                 width="110px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Apple 10.5" iPad Pro</p>
-                        <p align="center" class="card-title">64GB, Wi-Fi, Rose Gold, Retina</p>
-                        <p align="center" class="card-text">$719</p>
+            <% for(let i = 0 ; i < product.length/4; i++){ %>
+
+                <div class="carousel-item <% if (i === 0){ %> active<% } %>">
+                    <div class="row container card-bg border-bottom border-right border-left shadow-sm">
+                        <% for(let j = i ; j < i + 4; j++){ %>
+                            <div class="col-sm-3 border-right card-newsp">
+                                <a href="/product?id=<%=product[i]._id%>">
+                                    <img src="<%= images[Math.floor(Math.random()*10)][0].imageUrl %>"
+                                         width="140px" height="140px" class="center pic-1">
+                                </a>
+                                <p align="center" class="name-spnew"><%= product[j].name %></p>
+                                <p align="center" class="card-title"><%= product[j].description %></p>
+                                <p align="center" class="card-text">$<%= product[j].price %></p>
+                            </div>
+                        <% } %>
+
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row container card-bg border-bottom border-right border-left shadow-sm">
-                    <div class="col-sm-3 border-right card-newsp">
-                        <a href="chitietsp2.html">
-                            <img src="https://cdn.tgdd.vn/Products/Images/7077/197089/samsung-galaxy-watch-46mm-bac-nt-600x600.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Samsung Galaxy watch 46mm</p>
-                        <p align="center" class="card-title">Accepts i-Type 600 Instant Film</p>
-                        <p align="center" class="card-text">$250</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://digihouse.vn/wp-content/uploads/2019/10/Liectroux-ZK901-Den-100x100.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Liectroux ZK901</p>
-                        <p align="center" class="card-title">2-Axis Stabilized Camera</p>
-                        <p align="center" class="card-text">$310</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://www.sony.com.vn/image/e776e241f1d48b55ad6e630f862253b6?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Sony Xperia 1</p>
-                        <p align="center" class="card-title">Accepts Fujifilm Instant Film</p>
-                        <p align="center" class="card-text">$999</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <a href="chitietsp2.html">
-                            <img src="https://cdn.fptshop.com.vn/Uploads/Originals/2020/4/6/637217678681919352_asus-vivobook-x409fa-bac-1.png"
-                                 width="140px" width="140px" height="160px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Asus VivoBook X409FA</p>
-                        <p align="center" class="card-title">64GB, Wi-Fi, Rose Gold, Retina</p>
-                        <p align="center" class="card-text">$499</p>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
