@@ -45,9 +45,8 @@
         <li class="nav-item active">
             <a class="nav-link" href="index.html">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Thông tin tài khoản</span></a>
+                <span>Tạo mới Sản phẩm</span></a>
         </li>
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 
@@ -96,7 +95,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Addons
+            Admin
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -110,23 +109,11 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Admin Screen</h6>
                     <a class="collapse-item" href="/new_product">New Product</a>
+                    <a class="collapse-item" href="/new_category">New Category</a>
                 </div>
             </div>
         </li>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
-        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -234,7 +221,62 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-
+            <div class="container w-70">
+                <h3 class="mt-5 mb-4 ">Tạo mới sản phẩm</h3>
+                <form method="post" action="/new_product">
+                    <div class="form-group">
+                        <label for="name">Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" class="form-control" id="model" name="model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="place">Địa điểm</label>
+                        <input type="text" class="form-control" id="place" name="place" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category_id">Danh mục</label>
+<!--                        <input type="text" class="form-control" id="category_id" name="category_id" required>-->
+                        <select class="form-select form-control" aria-label="Default select example" name="category_id" id="category_id">
+                            <option selected>Open this select menu</option>
+                            <% for (var i = 0; i < categories.length; i++) {%>
+                                <option value="<%=categories[i]._id%>"><%=categories[i].name%></option>
+                            <%}%>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vote">Đánh giá</label>
+                        <input type="number" class="form-control" id="vote" name="vote" required>
+                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <label for="created_at">Ngày tạo</label>-->
+<!--                        <input type="date" class="form-control" id="created_at" name="created_at" required>-->
+<!--                    </div>-->
+                    <div class="form-group">
+                        <label for="color">Màu sắc</label>
+                        <input type="text" class="form-control" id="color" name="color" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Giá</label>
+                        <input type="number" class="form-control" id="price" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Số lượng</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Trạng thái</label>
+                        <input type="text" class="form-control" id="status" name="status" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Mô tả</label>
+                        <input type="text" class="form-control" id="description" name="description" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tạo sản phẩm</button>
+                </form>
+            </div>
             <!-- /.container-fluid -->
 
         </div>

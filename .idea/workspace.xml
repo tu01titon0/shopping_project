@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+    <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="done product detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/home.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/home.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConnectDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ConnectDB.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/category.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/category.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/product.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,5 +118,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="done product detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="done product detail" />
   </component>
 </project>
