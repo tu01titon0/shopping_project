@@ -24,10 +24,14 @@
         <h2 class="title-page">Danh mục sản phẩm</h2>
         <nav>
             <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Tìm kiếm sản phẩm</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <%= keywordSearch %>
+                    <% if(keywordSearch){ %>
+                        <%= keywordSearch %>
+                    <% } else { %>
+                        Tất cả sản phẩm
+                    <% } %>
                 </li>
             </ol>
         </nav>
@@ -43,15 +47,20 @@
                         <h5 class="card-title">Loại sản phẩm</h5>
                         <ul class="list-menu">
                             <li><a href="/search?keyword=điện+thoại">Điện thoại<span
-                                            class="badge badge-pill badge-light float-right">4</span> </a></li>
+                                            class="badge badge-pill badge-light float-right"><%= products.length %></span>
+                                </a></li>
                             <li><a href="/search?keyword=máy+tính+bảng">Máy tính bảng<span
-                                            class="badge badge-pill badge-light float-right">4</span> </a></li>
+                                            class="badge badge-pill badge-light float-right"><%= products.length %></span>
+                                </a></li>
                             <li><a href="/search?keyword=laptop">Laptop<span
-                                            class="badge badge-pill badge-light float-right">4</span> </a></li>
+                                            class="badge badge-pill badge-light float-right"><%= products.length %></span>
+                                </a></li>
                             <li><a href="/search?keyword=phụ+kiện">Phụ kiện<span
-                                            class="badge badge-pill badge-light float-right">4</span> </a></li>
+                                            class="badge badge-pill badge-light float-right"><%= products.length %></span>
+                                </a></li>
                             <li><a href="/search?keyword=khác">Khác<span
-                                            class="badge badge-pill badge-light float-right">0</span></a></li>
+                                            class="badge badge-pill badge-light float-right"><%= products.length %></span></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -119,10 +128,14 @@
                     <div class="form-inline">
                         <span class="mr-md-auto"><%= products.length %> Items found </span>
                         <div class="btn-group">
-                            <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip"
+                            <a href="/search?keyword=<%= keywordSearch %>"
+                               class="btn btn-outline-secondary <% if(!grid){ %>active<% } %>"
+                               data-toggle="tooltip"
                                title="List view">
                                 <i class="fa fa-bars"></i></a>
-                            <a href="#" class="btn btn-outline-secondary active" data-toggle="tooltip"
+                            <a href="/search?keyword=<%= keywordSearch %>&views=grid"
+                               class="btn btn-outline-secondary <% if(grid){ %>active<% } %>"
+                               data-toggle="tooltip"
                                title="Grid view">
                                 <i class="fa fa-th"></i></a>
                         </div>
@@ -130,19 +143,7 @@
                 </header>
 
                 <div class="row">
-                    <% products.forEach((product, index) => { %>
-                        <div class="col-md-3">
-                            <figure class="card card-product-grid">
-                                <div class="img-wrap"><img
-                                            src="<%= imageArray[index][0].imageUrl %>">
-                                </div>
-                                <figcaption class="info-wrap border-top">
-                                    <a href="/product?id=<%= product._id %>" class="title"><%= product.name %></a>
-                                    <div class="price mt-2">$<%= product.price %></div> <!-- price-wrap.// -->
-                                </figcaption>
-                            </figure>
-                        </div>
-                    <% }) %>
+                    <%- include('products') -%>
                 </div>
             </main>
         </div>

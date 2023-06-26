@@ -12,31 +12,28 @@ export class ProductController {
 
     static async searchProducts(req, res) {
         try {
-            let query = {};
-            if (req.query.keyword && req.query.keyword !== '') {
-                let keywordSearch = req.query.keyword || '';
-                const products = await Product.find({
-                    $or: [
-                        {name: {$regex: keywordSearch, $options: 'i'}},
-                        {
-                            category_id: {
-                                $in: await Category.find({
-                                    name: {
-                                        $regex: keywordSearch,
-                                        $options: 'i'
-                                    }
-                                }).select('_id')
-                            }
+            const keywordSearch = req.query.keyword || '';
+            const products = await Product.find({
+                $or: [
+                    {name: {$regex: keywordSearch, $options: 'i'}},
+                    {
+                        category_id: {
+                            $in: await Category.find({
+                                name: {
+                                    $regex: keywordSearch,
+                                    $options: 'i'
+                                }
+                            }).select('_id')
                         }
-                    ]
-                }).populate('category_id');
-                let imageArray = [];
-                for (const product of products) {
-                    const images = await Image.find({product_id: product._id});
-                    imageArray.push(images);
-                }
-                res.render('productsSearch', {user: req.user, products, imageArray, keywordSearch});
-            }
+                    }
+                ]
+            }).populate('category_id');
+
+            const imageArray = await Promise.all(products.map(product => Image.find({product_id: product._id})));
+            const view = req.query.views;
+            const grid = (view === 'grid');
+
+            res.render('productsSearch', {user: req.user, products, imageArray, keywordSearch, grid});
         } catch (err) {
             console.log(err.message);
         }
