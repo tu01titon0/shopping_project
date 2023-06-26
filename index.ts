@@ -50,7 +50,6 @@ app.use((req: any, res: any, next: any) => {
 })
 
 
-
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
