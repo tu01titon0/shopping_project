@@ -18,6 +18,8 @@ router.post('/login', passport.authenticate('local', {
 
 router.get('/product', ProductController.productDetail);
 
+router.get('/search', ProductController.searchProducts);
+
 router.get('/new_product', ProductController.newProduct);
 router.post('/new_product', ProductController.createProduct)
 
