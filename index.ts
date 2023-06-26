@@ -17,13 +17,13 @@ db.connect().then(r => {
     console.log(`connect database error`);
 })
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false}))
 
 app.use(express.static('./src/views'))
 app.use(express.static('another_static_folder'))
 app.use(express.static('./src/public'))
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -38,7 +38,7 @@ app.use(passport.session());
 app.set('view engine', "ejs")
 app.set("views", "./src/views")
 app.use(router);
-// app.use('/', router);
+// app.use('/',router);
 
 // viet middlewares chinh sua res
 
@@ -48,7 +48,6 @@ app.use((req: any, res: any, next: any) => {
         next();
     }
 })
-
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)

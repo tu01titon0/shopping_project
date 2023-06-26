@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="../css/sale.css">
     <link rel="stylesheet" href="../css/main.css">
     <!-- jQuery -->
+<<<<<<< HEAD
     <script src="../js/jquery-2.0.0.min.js" type="text/javascript"></script>
+=======
+    <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+>>>>>>> 5938b8b9ac8b81f2ba4aaba07e2227f7bb65e1f2
 
     <!-- Bootstrap4 files-->
     <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -42,8 +49,8 @@
                     </div> <!-- slider-product.// -->
                     <div class="thumbs-wrap">
                         <% images.forEach(image => { %>
-                        <a href="#" class="item-thumb enlarge-image"> <img
-                                    src="<%= image.imageUrl %>"></a>
+                            <a href="#" class="item-thumb enlarge-image"> <img
+                                        src="<%= image.imageUrl %>"></a>
                         <% }) %>
                     </div>
                 </article> <!-- gallery-wrap .end// -->
@@ -69,7 +76,7 @@
                         <dt class="col-sm-3">Model</dt>
                         <dd class="col-sm-9"><%= product.model %></dd>
 
-                        <dt class="col-sm-3">Nơi sx</dt>
+                        <dt class="col-sm-3">Nơi sản xuất</dt>
                         <dd class="col-sm-9"><%= product.place %></dd>
                     </dl>
 

@@ -16,8 +16,20 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login'
 }));
 
-router.get('/product/:id', ProductController.productDetail);
 router.get('/product', ProductController.productDetail);
+
+router.get('/search', ProductController.searchProducts);
+
+router.get('/new_product', ProductController.newProduct);
+router.post('/new_product', ProductController.createProduct)
+
+router.get('/new_category', ProductController.newCategory)
+router.post('/new_category', ProductController.createCategory)
+
+router.get('/product/:id', ProductController.createCategory)//ServerLOad
+router.get('/product', ProductController.createCategory)// Code chạy
+
+
 // router.get(
 //     '/login/google',
 //     passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -31,5 +43,7 @@ router.get('/product', ProductController.productDetail);
 //         res.send('You are authenticated');
 //     }
 // );
-
+router.get('*', function (req, res){
+    res.render('notfound')
+});
 export default router
