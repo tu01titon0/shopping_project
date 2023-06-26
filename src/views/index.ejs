@@ -31,75 +31,37 @@
     <script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
-<%- include('header'); -%>                                                           
+<%- include('header'); -%>
 
 <!-- giới thiệu sản phẩm mới -->
 <div class=" bg-new">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row setting">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 content">
-                        <span class="new">New</span>
-                        <p class="title-new">Apple Watch Hermes Edition</p>
-                        <p class="information">Stainless Steel Case with Fauve Barenia Leather</p>
-                        <a href="chitietsp2.html">
-                            <button type="button" class="btn btn-primary buy">$1399 | Mua ngay</button>
-                        </a>
 
-                    </div>
-                    <div class="col-md-4 img-1">
-                        <a href="chitietsp2.html">
-                            <img border="0"
-                                 src="https://www.imore.com/sites/imore.com/files/styles/larger/public/field/image/2015/09/apple-watch-hermes-double-tour-press.jpg?itok=E1d2BGg4"
-                                 width="550" height="374" class="d-block w-500 " alt="1">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <% for(let i = 0 ; i < 4; i++){ %>
+                    <div class="carousel-item  <% if (i === 0){ %> active<% } %>">
+                        <div class="row setting">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 content">
+                                <span class="new">New</span>
+                                <p class="title-new"><%= product[i].name %></p>
+                                <p class="information"><%= product[i].description %></p>
+                                <a href="/product?id=<%= product[i].id %>">
+                                    <button type="button" class="btn btn-primary buy">$<%= product[i].price %> | Mua ngay
+                                    </button>
+                                </a>
 
-            <div class="carousel-item">
-                <div class="row setting">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 content">
-                        <span class="new">New</span>
-                        <p class="title-new">Samsung Galaxy S20 Ultra 128 Gb Gray</p>
-                        <p class="information">Designed by SAMSUNG</p>
-                        <a href="Chitietsp1.html">
-                            <button type="button" class="btn btn-primary buy">$1299 | Mua ngay</button>
-                        </a>
+                            </div>
+                            <div class="col-md-4 img-1">
+                                <a href="/product?id=<%= product[i].id %>">
+                                    <img border="0"
+                                         src="<%= images.imageUrl %>"
+                                         width="550" height="374" class="d-block w-500 " alt="1">
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 img-1">
-                        <a href="Chitietsp1.html">
-                            <img border="0"
-                                 src="https://cdn.dxomark.com/wp-content/uploads/medias/post-44843/SS_S20_Ultra_Catalog_Gray_F_B.jpg"
-                                 width="500" height="374" class="d-block w-500 " alt="2">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row setting">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 content">
-                        <span class="new">New</span>
-                        <p class="title-new">Omega IEM Noise Isolating Earphones</p>
-                        <p class="information">In-ear monitor</p>
-                        <a href="Chitietsp3.html">
-                            <button type="button" class="btn btn-primary buy">$349 | Mua ngay</button>
-                        </a>
-                    </div>
-                    <div class="col-md-4 img-1">
-                        <a href="chitietsp3.html">
-                            <img border="0"
-                                 src="https://cdn.shopify.com/s/files/1/1025/6603/products/Black-Omega_grande_09464862-663e-4972-a66b-9380c5acf124_2000x.jpeg?v=1497338642"
-                                 width="400" height="374" class="d-block w-500 " alt="3">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+            <% } %>
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -109,40 +71,23 @@
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
+
 </div>
 <div class="container border-top rv">
     <div class="row">
+        <% for (var i = 0; i < 3; i++) { %>
         <div class="col-sm-2">
-            <a href="chitietsp2.html">
-                <img src="https://www.imore.com/sites/imore.com/files/styles/larger/public/field/image/2015/09/apple-watch-hermes-double-tour-press.jpg?itok=E1d2BGg4"
+            <a href="/product?id=<%= product[i].id %>">
+                <img src="<%= images.imageUrl %>"
                      width="110" height="80">
             </a>
         </div>
         <div class="col-sm-2 border-right">
-            <a href="/product/649712bfb7ecca48abae4691" class="card-title">Apple Watch Brown Hermes Edition</a>
-            <p class="card-text">$1,399</p>
+            <a href="/product?id=<%= product[i].id %>" class="card-title"><%= product[i].name %></a>
+            <p class="card-text">$<%= product[i].price %></p>
         </div>
+        <% } %>
 
-        <div class="col-sm-2">
-            <a href="Chitietsp1.html">
-                <img src="https://cdn.dxomark.com/wp-content/uploads/medias/post-44843/SS_S20_Ultra_Catalog_Gray_F_B.jpg"
-                     width="110" height="80">
-            </a>
-        </div>
-        <div class="col-sm-2 border-right">
-            <a href="Chitietsp1.html" class="card-title">Samsung Galaxy S20 Ultra 128 Gb Gray</a>
-            <p class="card-text">$829</p>
-        </div>
-        <div class="col-sm-2">
-            <a href="chitietsp3.html">
-                <img src="https://cdn.shopify.com/s/files/1/1025/6603/products/Black-Omega_grande_09464862-663e-4972-a66b-9380c5acf124_2000x.jpeg?v=1497338642"
-                     width="80" height="80">
-            </a>
-        </div>
-        <div class="col-sm-2">
-            <a href="chitietsp3.html" class="card-title">Omega IEM Noise Isolating Earphones</a>
-            <p class="card-text">$349</p>
-        </div>
     </div>
 </div>
 
@@ -156,95 +101,21 @@
 
 
 <div class="container">
-    <p style="color: black" class="title-newsp"   align="center">Sản phẩm bán chạy</p>
+    <p style="color: black" class="title-newsp" align="center">Sản phẩm bán chạy</p>
     <div class="row">
+        <% for (let i = 0; i < 8; i++) { %>
         <div class="col-md-3">
             <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-red-2-400x460-400x460.png"></div>
+                <div class="img-wrap"><img src="<%= images.imageUrl %>"></div>
+
                 <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">IPHONE 11 </a>
-                    <div class="price mt-2">$949</div> <!-- price-wrap.// -->
+                    <a href="chitietsp2.html" class="title"><%= product[i].name %></a>
+                    <div class="price mt-2">$<%= product[i].price %></div> <!-- price-wrap.// -->
                 </figcaption>
             </figure>
         </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x460.png">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">Samsung Galaxy Note 10+</a>
-                    <div class="price mt-2">$1050</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/44/210665/acer-aspire-a315-34-c2h9-n4000-4gb-256gb-win10-nx9-1-600x600.jpg">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">Laptop Acer Aspire </a>
-                    <div class="price mt-2">$350</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/54/224202/tai-nghe-bluetooth-true-wireless-sony-wf-xb700-den-1-600x600-1-600x600.jpg">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">In-ear Sony WF-XB700</a>
-                    <div class="price mt-2">$149</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/57/197289/pin-sac-du-phong-polymer-10000mah-ava-pa-ck01-add-600x600.jpg">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">Polymer 10.000 mAh AVA PA</a>
-                    <div class="price mt-2">$12</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/7077/212620/samsung-galaxy-watch-active-2-44-mm-sillicon-thumm-600x600.jpg">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">Galaxy Watch Active 2 </a>
-                    <div class="price mt-2">$359</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/522/219912/samsung-galaxy-tab-s6-lite-xanh-400x460-400x460.png">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title">Samsung Galaxy Tab S6 Lite</a>
-                    <div class="price mt-2">$429.00</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
-        <div class="col-md-3">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"><img
-                            src="https://cdn.tgdd.vn/Products/Images/2162/212882/loa-bluetooth-mozard-e7-1-600x600-1-600x600.jpg">
-                </div>
-                <figcaption class="info-wrap border-top">
-                    <a href="chitietsp2.html" class="title"> Mozard E7</a>
-                    <div class="price mt-2">$299.00</div> <!-- price-wrap.// -->
-                </figcaption>
-            </figure>
-        </div>
+        <% } %>
+
     </div>
     <a href="danhmuc.html" class="btn-light">
         <p align="center">Xem tất cả sản phẩm <i class="fas fa-spinner"></i>
@@ -259,86 +130,24 @@
     <p class="title-newsp" align="center">Sản Phẩm Mới </p>
     <div id="carouselExampleControls1" class="carousel slide2 " data-ride="carousel">
         <div class="carousel-inner container">
-            <div class="carousel-item active">
+            <% for(let i = 0 ; i < 2; i++){ %>
+            <div class="carousel-item <% if (i === 0){ %> active<% } %>">
                 <div class="row container card-bg border-bottom border-right border-left shadow-sm">
+                    <% for(let j = i ; j < i + 4; j++){ %>
                     <div class="col-sm-3 border-right card-newsp">
                         <a href="chitietsp2.html">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/715aC71nXEL._AC_SL1500_.jpg"
+                            <img src="<%= images.imageUrl %>"
                                  width="140px" height="140px" class="center pic-1">
                         </a>
-                        <p align="center" class="name-spnew">Polaroid Originals</p>
-                        <p align="center" class="card-title">Accepts i-Type 600 Instant Film</p>
-                        <p align="center" class="card-text">$199</p>
+                        <p align="center" class="name-spnew"><%= product[j].name %></p>
+                        <p align="center" class="card-title"><%= product[j].description %></p>
+                        <p align="center" class="card-text">$<%= product[j].price %></p>
                     </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://images.squarespace-cdn.com/content/v1/582e233a46c3c4327910c767/1501179625260-ATX2H9M87STYD1U8Z80O/ke17ZwdGBToddI8pDm48kMtiXMEMZ8ID8MVhA-T_Qc9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIfy9uRsqnknGrsPwiW8VdnsJxMq6FvgYbxptNsO-6IOIKMshLAGzx4R3EDFOm1kBS/1495641624000_img_802918_3.jpg?format=1500w"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">DJI Spark Quadcopter</p>
-                        <p align="center" class="card-title">2-Axis Stabilized Camera</p>
-                        <p align="center" class="card-text">$379</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://anhducdigital.vn/media/product/3944_instax_mini_9_ice_blue.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Fujifilm instax mini 9</p>
-                        <p align="center" class="card-title">Accepts Fujifilm Instant Film</p>
-                        <p align="center" class="card-text">$99</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <a href="chitietsp2.html">
-                            <img src="https://didongthongminh.vn/upload_images/2017/10/apple-ipadpro12.9-4g-qsd-grey.png"
-                                 width="110px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Apple 10.5" iPad Pro</p>
-                        <p align="center" class="card-title">64GB, Wi-Fi, Rose Gold, Retina</p>
-                        <p align="center" class="card-text">$719</p>
-                    </div>
+                    <% } %>
+
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="row container card-bg border-bottom border-right border-left shadow-sm">
-                    <div class="col-sm-3 border-right card-newsp">
-                        <a href="chitietsp2.html">
-                            <img src="https://cdn.tgdd.vn/Products/Images/7077/197089/samsung-galaxy-watch-46mm-bac-nt-600x600.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Samsung Galaxy watch 46mm</p>
-                        <p align="center" class="card-title">Accepts i-Type 600 Instant Film</p>
-                        <p align="center" class="card-text">$250</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://digihouse.vn/wp-content/uploads/2019/10/Liectroux-ZK901-Den-100x100.jpg"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Liectroux ZK901</p>
-                        <p align="center" class="card-title">2-Axis Stabilized Camera</p>
-                        <p align="center" class="card-text">$310</p>
-                    </div>
-                    <div class="col-sm-3 border-right">
-                        <a href="chitietsp2.html">
-                            <img src="https://www.sony.com.vn/image/e776e241f1d48b55ad6e630f862253b6?fmt=pjpeg&wid=330&bgcolor=FFFFFF&bgc=FFFFFF"
-                                 width="140px" height="140px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Sony Xperia 1</p>
-                        <p align="center" class="card-title">Accepts Fujifilm Instant Film</p>
-                        <p align="center" class="card-text">$999</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <a href="chitietsp2.html">
-                            <img src="https://cdn.fptshop.com.vn/Uploads/Originals/2020/4/6/637217678681919352_asus-vivobook-x409fa-bac-1.png"
-                                 width="140px" height="160px" class="center">
-                        </a>
-                        <p align="center" class="name-spnew">Asus VivoBook X409FA</p>
-                        <p align="center" class="card-title">64GB, Wi-Fi, Rose Gold, Retina</p>
-                        <p align="center" class="card-text">$499</p>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
 
         <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
@@ -348,21 +157,7 @@
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <p class="title-newsp2">Apple Watch 3 Review: Don’t Overlook This Shiny, Speedy Upgrade</p>
-                <a href="https://newtechshop.vn/apple-smartwatch-series-3-review-p1.html"
-                   class="btn btn-primary bt-newsp">Read More <i class="arrow right"></i></a>
-                </button>
-            </div>
-            <div class="col-sm-6 pd-bottom">
-                <div class="container">
-                    <img src="https://bizweb.dktcdn.net/thumb/large/100/155/073/products/c700x420-4d20808f-efd1-4a9f-90ca-d236ed40d852.jpg?v=1556178825027">
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <!-- gợi ý -->

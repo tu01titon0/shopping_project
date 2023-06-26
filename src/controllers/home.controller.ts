@@ -4,9 +4,9 @@ import {Image} from "../models/schemas/image.model";
 class HomeController {
     static async getHomePage(req: any, res: any) {
         try{
-            const productID = req.params.id;
-            const product = await Product.findOne({_id: productID}).populate('category_id');
-            const images = await Image.find({product_id: productID});
+
+            const product = await Product.find().populate('category_id');
+            const images = await Image.findOne({product_id: product[0]._id.toString()});
             return  res.render('index', {user: req.user, product, images});
         }catch (err){
             console.log(err)
