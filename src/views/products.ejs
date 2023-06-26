@@ -12,6 +12,31 @@
             </figure>
         </div>
     <% }) %>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
+                <a class="page-link"
+                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                   aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <% for (let i = 1; i <= numberPage; i++) { %>
+                <li class="page-item"><a class="page-link"
+                                         href="/search?keyword=<%= keywordSearch %>&views=grid&page=<%= i %>">
+                        <%= i %>
+                    </a></li>
+            <% } %>
+            <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
+                <a class="page-link"
+                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                   aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 <% } else { %>
     <% products.forEach((product, index) => { %>
         <article class="card card-product-list" style="width: 850px">
@@ -38,7 +63,7 @@
                             <li>Màu sắc: <%= product.color %></li>
                             <li>Đánh giá:
                                 <% for(let i = 0; i < product.vote; i++) { %>
-                                    <i class="fa fa-star" style="color: orange"></i>
+                                    <i class="fa fa-star" style="color: #ff9017"></i>
                                 <% } %>
                             </li>
                         </ul>
@@ -66,4 +91,29 @@
             </div> <!-- card-body .// -->
         </article>
     <% }) %>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
+                <a class="page-link"
+                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                   aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <% for (let i = 1; i <= numberPage; i++) { %>
+                <li class="page-item"><a class="page-link"
+                                         href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
+                        <%= i %>
+                    </a></li>
+            <% } %>
+            <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
+                <a class="page-link"
+                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                   aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 <% } %>
