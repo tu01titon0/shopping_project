@@ -123,7 +123,7 @@
             <div id="collapseCategories" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Admin Screen</h6>
-                    <a class="collapse-item" href="/list_category">List Category</a>
+                    <a class="collapse-item" href="/list_product">List Category</a>
                     <a class="collapse-item" href="/new_category">New Category</a>
                 </div>
             </div>
@@ -239,58 +239,41 @@
 
             <!-- Begin Page Content -->
             <div class="container w-70">
-                <h3 class="mt-5 mb-4 ">Tạo mới sản phẩm</h3>
-                <form method="post" action="/new_product">
-                    <div class="form-group">
-                        <label for="name">Tên sản phẩm</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="model">Model</label>
-                        <input type="text" class="form-control" id="model" name="model" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="place">Địa điểm</label>
-                        <input type="text" class="form-control" id="place" name="place" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="category_id">Danh mục</label>
-<!--                        <input type="text" class="form-control" id="category_id" name="category_id" required>-->
-                        <select class="form-select form-control" aria-label="Default select example" name="category_id" id="category_id">
-                            <option selected>Chọn danh mục sản phẩm</option>
-                            <% for (var i = 0; i < categories.length; i++) {%>
-                                <option value="<%=categories[i]._id%>"><%=categories[i].name%></option>
-                            <%}%>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="color">Màu sắc</label>
-                        <input type="text" class="form-control" id="color" name="color" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Giá</label>
-                        <input type="number" class="form-control" id="price" name="price" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity">Số lượng</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Trạng thái</label>
-                        <input type="text" class="form-control" id="status" name="status" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Mô tả</label>
-                        <input type="text" class="form-control" id="description" name="description" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="image">Mô tả</label>
-                        <input type="text" class="form-control" id="image" name="image" placeholder="Image" hidden onchange="check()"/>
-                        <div id="imgDiv" multiple></div>
-                        <input type="file" id="fileButton" onchange="uploadImage(event)" multiple>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Tạo sản phẩm</button>
-                </form>
+                <h3 class="mt-5 mb-4 ">List sản phẩm</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Nơi sản xuất</th>
+                        <th scope="col">Màu sắc</th>
+                        <th scope="col">Giá tiền</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Mô tả</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                            <tr>
+                                <td><%= product.name %></td>
+                                <td><%= product.model %></td>
+                                <td><%= product.place %></td>
+                                <td><%= product.color %></td>
+                                <td><%= product.price %></td>
+                                <td><%= product.quantity %></td>
+                                <td><%= product.description %></td>
+                                <td>
+                                    <a href="/editProduct/:<%=product._id%>" class="btn btn-primary">Edit Product</a>
+                                    <a href="/uploadImage/:<%=product._id%>" class="btn btn-info">Upload images</a>
+                                    <a href="/deleteProduct/:<%=product._id%>" class="btn btn-danger">Delete Product</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+
+
+                    </tbody>
+                </table>
             </div>
             <!-- /.container-fluid -->
 
@@ -354,64 +337,7 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyDxG2vMNkqz1sf4UGAaMzcaq3lVdAN5C8M",
-        authDomain: "users-8f542.firebaseapp.com",
-        projectId: "users-8f542",
-        storageBucket: "users-8f542.appspot.com",
-        messagingSenderId: "351740883393",
-        appId: "1:351740883393:web:b9c6a3bba9f040cf3ebf40",
-        measurementId: "G-KN5Q9HHHL7"
-    };
-    firebase.initializeApp(firebaseConfig);
-</script>
 
-<script type="text/javascript">
-    function uploadImage(e) {
-        let fbBucketName = 'images';
-        let uploader = document.getElementById('uploader');
-        let files = e.target.files;  // Lấy danh sách các file đã được chọn
-        for (let i = 0; i < files.length; i++) {
-            let file = files[i];
-            let storageRef = firebase.storage().ref(`${fbBucketName}/${file.name}`);
-            let uploadTask = storageRef.put(file);
-            uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-                function (snapshot) {
-                    console.log(snapshot);
-                    uploader.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    switch (snapshot.state) {
-                        case firebase.storage.TaskState.PAUSED:
-                            break;
-                        case firebase.storage.TaskState.RUNNING:
-                            break;
-                    }
-                }, function (error) {
-                    switch (error.code) {
-                        case 'storage/unauthorized':
-                            break;
-                        case 'storage/canceled':
-                            break;
-                        case 'storage/unknown':
-                            break;
-                    }
-                }, async function () {
-                    let downloadURL = await uploadTask.snapshot.downloadURL;
-                    console.log(downloadURL);
-                    let imgDiv = document.getElementById('imgDiv');
-                    let imgElement = document.createElement('img');
-                    imgElement.setAttribute('height', '200px');
-                    imgElement.setAttribute('width', '200px');
-                    imgElement.setAttribute('src', downloadURL);
-                    imgDiv.appendChild(imgElement);
-                    let imageInput = document.getElementById('image');
-                    imageInput.value += downloadURL + ";";                    check();
-                });
-        }
-    }
-</script>
 </body>
 
 </html>

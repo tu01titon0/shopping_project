@@ -5,6 +5,7 @@ const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
+import {AdminController} from "../controllers/admin.controller";
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -20,14 +21,14 @@ router.get('/product', ProductController.productDetail);
 
 router.get('/search', ProductController.searchProducts);
 
-router.get('/new_product', ProductController.newProduct);
-router.post('/new_product', ProductController.createProduct)
+router.get('/new_product', AdminController.newProduct);
+router.post('/new_product', AdminController.createProduct)
 
-router.get('/new_category', ProductController.newCategory)
-router.post('/new_category', ProductController.createCategory)
+router.get('/new_category', AdminController.newCategory)
+router.post('/new_category', AdminController.createCategory)
 
-router.get('/product/:id', ProductController.createCategory)//ServerLOad
-router.get('/product', ProductController.createCategory)// Code chạy
+router.get('/list_product', AdminController.showProducts)
+router.get('/list_category', AdminController.createCategory)
 
 
 // router.get(
