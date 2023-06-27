@@ -39,19 +39,19 @@ router.post('/add_to_cart', CartController.addProductToCart);
 router.get('/cart', CartController.getCartPage);
 
 
-// router.get(
-//     '/login/google',
-//     passport.authenticate('google', { scope: ['profile', 'email'] })
-// );
-// router.get(
-//     '/google/callback',
+router.get(
+    '/login/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+router.get(
+    '/google/callback',
 
-//     passport.authenticate('google'),
+    passport.authenticate('google'),
 
-//     (req, res) => {
-//         res.send('You are authenticated');
-//     }
-// );
+    (req, res) => {
+        res.send('You are authenticated');
+    }
+);
 router.get('*', function (req, res){
     res.render('notfound')
 });

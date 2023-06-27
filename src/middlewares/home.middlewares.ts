@@ -1,5 +1,5 @@
 import passport from "passport";
-import LocalStrategy from "passport-local";
+import {Strategy as LocalStrategy} from "passport-local";
 import {user} from "../models/schemas/user.model";
 import {Product} from "../models/schemas/product.model";
 import {Image} from "../models/schemas/image.model";
