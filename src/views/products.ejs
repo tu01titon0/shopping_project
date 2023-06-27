@@ -1,7 +1,7 @@
 <% if(grid) { %>
     <% products.forEach((product, index) => { %>
         <div class="col-md-3">
-            <figure class="card card-product-grid">
+            <figure class="card card-product-grid" style="height: 350px">
                 <div class="img-wrap"><a href="/product?id=<%= product._id %>"><img
                                 src="<%= imageArray[index][0].imageUrl %>"></a>
                 </div>
@@ -12,31 +12,32 @@
             </figure>
         </div>
     <% }) %>
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
-                <a class="page-link"
-                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
-                   aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <% for (let i = 1; i <= numberPage; i++) { %>
-                <li class="page-item"><a class="page-link"
-                                         href="/search?keyword=<%= keywordSearch %>&views=grid&page=<%= i %>">
-                        <%= i %>
-                    </a></li>
-            <% } %>
-            <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
-                <a class="page-link"
-                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
-                   aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="row">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                       aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <% for (let i = 1; i <= numberPage; i++) { %>
+                    <li class="page-item"><a class="page-link"
+                                             href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
+                            <%= i %>
+                        </a></li>
+                <% } %>
+                <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                       aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 <% } else { %>
     <% products.forEach((product, index) => { %>
         <article class="card card-product-list" style="width: 850px">
@@ -91,29 +92,42 @@
             </div> <!-- card-body .// -->
         </article>
     <% }) %>
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
-                <a class="page-link"
-                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
-                   aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <% for (let i = 1; i <= numberPage; i++) { %>
-                <li class="page-item"><a class="page-link"
-                                         href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
-                        <%= i %>
+    <div class="row">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item <% if (currentPage === 1) { %> d-none <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=1">
+                        Trang đầu
                     </a></li>
-            <% } %>
-            <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
-                <a class="page-link"
-                   href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
-                   aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+                <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                       aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <% for (let i = currentPage - 2; i <= currentPage + 7; i++) { %>
+                    <% if(i > 0 && i <= numberPage) { %>
+                        <li class="page-item"><a class="page-link"
+                                                 href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
+                                <%= i %>
+                            </a></li>
+                    <% } %>
+                <% } %>
+                <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === numberPage ? 1 : currentPage + 1 %>"
+                       aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item <% if (currentPage === numberPage) { %> d-none <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= numberPage %>">
+                        Trang cuối
+                    </a></li>
+            </ul>
+        </nav>
+    </div>
 <% } %>

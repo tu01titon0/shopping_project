@@ -1,7 +1,7 @@
 import {Schema, model} from "mongoose";
 const userSchema = new Schema({
     userName : String,
-    image_Id :  { type: Schema.Types.ObjectId, ref: "image" },
+    image_Id :  { type: Schema.Types.ObjectId, ref: "Image" },
     email : String,
     role : String,
     password : String,
