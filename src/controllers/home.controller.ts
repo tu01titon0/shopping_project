@@ -22,24 +22,28 @@ class HomeController {
     }
 
     static getRegisterPage(req: any, res: any): any {
-        res.render('register', {user: req.user})
+        res.render('register', {user: req.user || undefined})
     }
 
     static async postRegisterPage(req: any, res: any) {
-        const userName = await user.findOne({username: req.body.username})
-        if (!userName) {
-            const newUser = new user({
-                userName: req.body.username,
-                password: req.body.password,
-                address: req.body.address,
-                email: req.body.mail,
-                role: 'user'
-            })
-            await newUser.save()
-            res.redirect('/')
+        try {
+            const userName = await user.findOne({userName: req.body.username})
+            if (!userName) {
+                const newUser = new user({
+                    userName: req.body.username,
+                    password: req.body.password,
+                    address: req.body.address,
+                    email: req.body.mail,
+                    role: 'user'
+                })
+                await newUser.save()
+                res.redirect('/')
 
-        } else {
-            res.render('register')
+            } else {
+                res.render('register')
+            }
+        } catch (err) {
+            console.log(err.message);
         }
     }
 }

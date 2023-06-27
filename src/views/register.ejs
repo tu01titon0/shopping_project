@@ -22,7 +22,64 @@
 
 </head>
 <body>
-<%- include('header'); -%>
+<header class="section-header">
+    <section class="header-main">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-lg-3 col-12">
+                    <a href="/">
+                        <div class="brand-wrap">
+                            <img class="logo" src="images/logo.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-lg-5 col-12">
+                    <form action="/search" class="search">
+                        <div class="input-group">
+                            <input
+                                    type="text"
+                                    name="keyword"
+                                    class="form-control"
+                                    placeholder="Search"
+                            />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- search-wrap .end// -->
+                </div>
+                <!-- col.// -->
+                    <div class="col-md-5 col-lg-4 col-sm-12 col-12 text-md-right">
+                        <div class="mt-12 mt-md-0">
+                            <a href="/login" class="btn btn-outline-primary">Đăng nhập</a>
+                            <a href="/register" class="btn btn-primary">Đăng ký</a>
+                            <a href="giohang.html" class="btn btn-light">
+                                Giỏ hàng <span class="ml-2 badge badge-warning">3</span>
+                            </a>
+                            <button
+                                    class="btn float-right btn-light d-md-none"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#main_nav"
+                                    aria-controls="main_nav"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                            >
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                <!-- col.// -->
+            </div>
+            <!-- row.// -->
+        </div>
+        <!-- container.// -->
+    </section>
+</header>
+
 
 <section class="section-conten padding-y" style="min-height:84vh">
     <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
