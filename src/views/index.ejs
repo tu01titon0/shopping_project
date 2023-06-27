@@ -184,7 +184,9 @@
                                     <img src="<%= images[j][0].imageUrl %>"
                                          width="140px" height="140px" class="center pic-1">
                                 </a>
+                                <a href="/product?id=<%= product[j]._id %>">
                                 <p align="center" class="name-spnew"><%= product[j].name %></p>
+                                </a>
                                 <p align="center" class="card-title"><%= product[j].description %></p>
                                 <p align="center" class="card-text">$<%= product[j].price %></p>
                             </div>
