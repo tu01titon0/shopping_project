@@ -1,16 +1,20 @@
 import mongoose from "mongoose";
+
+const faker = require('faker');
 import {Category} from "./schemas/category.model";
 import {Product} from "./schemas/product.model";
 import {Image} from "./schemas/image.model";
-const faker = require("faker");
+
 export class ConnectDB {
     async connect() {
         await mongoose.connect('mongodb://127.0.0.1:27017/shopping_project');
+        // await mongoose.connect('mongodb+srv://tu01titon0:Tu123@cluster0.s5zm4tu.mongodb.net/');
+
 //         async function createDummyData() {
 //             try {
 //                 // Tạo 100 danh mục
 //                 const categories = [];
-//                 for (let i = 8; i < 100; i++) {
+//                 for (let i = 0; i < 100; i++) {
 //                     const category = new Category({name: `Category ${i + 1}`});
 //                     await category.save();
 //                     categories.push(category);

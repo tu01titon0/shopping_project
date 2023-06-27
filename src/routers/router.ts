@@ -26,7 +26,7 @@ router.post('/new_product', ProductController.createProduct)
 router.get('/new_category', ProductController.newCategory)
 router.post('/new_category', ProductController.createCategory)
 
-router.get('/product/:id', ProductController.createCategory)//ServerLOad
+// router.get('/product/:id', ProductController.createCategory)//ServerLOad
 router.get('/product', ProductController.createCategory)// Code chạy
 
 
