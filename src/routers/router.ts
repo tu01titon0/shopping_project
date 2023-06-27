@@ -6,7 +6,10 @@ import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
+import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
+
+
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -17,6 +20,9 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
 }));
+
+router.get('/register', HomeController.getRegisterPage)
+router.post('/register', HomeController.postRegisterPage)
 
 router.get('/product', ProductController.productDetail);
 
@@ -30,8 +36,13 @@ router.post('/new_category', AdminController.createCategory)
 
 router.get('/list_product', AdminController.showProducts)
 router.get('/list_category', AdminController.createCategory)
-router.get('/list_user', AdminController.getListUsers)
-router.get('/editUser', UserController.getListUsers)
+
+router.post('/add_to_cart', CartController.addProductToCart);
+
+router.get('/cart', CartController.getCartPage);
+router.get('/editUser', UserController.getEditUsers);
+router.post('/editUser', UserController.getEditUsers);
+
 
 
 // router.get(
