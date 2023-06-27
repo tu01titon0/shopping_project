@@ -152,6 +152,26 @@
 </section>
 
 <%- include('footer'); -%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Import jQuery từ CDN -->
+<script>
+    // Lắng nghe sự kiện submit form
+    $('#myForm').submit(function(event) {
+
+        event.preventDefault(); // Ngăn chặn việc tải lại trang
+        const formData = $(this).serialize(); // Chuyển đổi dữ liệu form thành chuỗi query string
+        const url = '/add_to_cart'; // Đường dẫn API xử lý dữ liệu (thay đổi theo yêu cầu)
+
+        // Gửi yêu cầu POST đến máy chủ Node.js
+        $.post(url, formData)
+            .done(function(response) {
+                console.log(response);
+                $(".number-cart").text(response)
+            })
+            .fail(function(error) {
+                console.error(error.message);
+            });
+    });
+</script>
 
 </body>
 </html>
