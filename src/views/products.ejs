@@ -82,10 +82,17 @@
                                     </div>
                                 </div>  <!-- input-spinner.// -->
                             </div> <!-- col.// -->
-                            <div class="form-group col-md">
-                                <a href="#" class="btn btn-primary"> <span class="text">Add to cart</span> <i
-                                            class="fas fa-shopping-cart"></i> </a>
-                            </div> <!-- col.// -->
+                            <form action="/add_to_cart" method="post">
+                                <input type="text" hidden name="productID" value="<%= product._id %>">
+                                <div class="form-group col-md">
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="text">
+                                            Add to cart
+                                        </span>
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div> <!-- col.// -->
+                            </form>
                         </div> <!-- row.// -->
                     </div> <!-- col.// -->
                 </div> <!-- row.// -->
