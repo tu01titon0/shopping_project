@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/template_prj/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/admin.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/sass/bootstrap-assets/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/sass/bootstrap-assets/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/sass/bootstrap-assets/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/sass/bootstrap-assets/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/sass/ui-assets/sections/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/sass/ui-assets/sections/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/bootstrap/scss/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/bootstrap/scss/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/datatables/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/fontawesome-free/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/fontawesome-free/metadata/icons.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/Chitietsp1.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/Chitietsp1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/chitietsp2.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/chitietsp2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/chitietsp3.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/chitietsp3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/css/ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/css/ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/danhmuccn.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/danhmuccn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/danhmuclist.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/danhmuclist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/giohang.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -70,6 +91,8 @@
       <recent name="$PROJECT_DIR$/src/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\shopping_project\src\views\user" />
+      <recent name="D:\shopping_project\template_prj" />
       <recent name="D:\demo\src" />
     </key>
   </component>

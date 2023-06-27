@@ -3515,7 +3515,7 @@
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
+    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header.ejs"></h3>' + '<div class="popover-body"></div></div>'
   });
 
   var DefaultType$5 = _extends({}, Tooltip.DefaultType, {
@@ -3524,7 +3524,7 @@
 
   var CLASS_NAME_FADE$3 = 'fade';
   var CLASS_NAME_SHOW$5 = 'show';
-  var SELECTOR_TITLE = '.popover-header';
+  var SELECTOR_TITLE = '.popover-header.ejs';
   var SELECTOR_CONTENT = '.popover-body';
   var Event$1 = {
     HIDE: "hide" + EVENT_KEY$7,

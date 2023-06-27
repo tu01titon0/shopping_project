@@ -6,6 +6,7 @@ import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
+import {UserController} from "../controllers/user.controller";
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -29,6 +30,8 @@ router.post('/new_category', AdminController.createCategory)
 
 router.get('/list_product', AdminController.showProducts)
 router.get('/list_category', AdminController.createCategory)
+router.get('/list_user', AdminController.getListUsers)
+router.get('/editUser', UserController.getListUsers)
 
 
 // router.get(
