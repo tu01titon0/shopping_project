@@ -53,7 +53,7 @@
 
                         </div>
                         <div class="col-md-4 img-1">
-                            <% if (product[i] && images[i][0]) {%>
+                            <% if (product[i] && images[i][0]) { %>
 
                                 <a href="/product?id=<%= product[i].id %>">
                                     <img border="0"
@@ -80,12 +80,12 @@
     <div class="row">
         <% for (var i = 0; i < 3; i++) { %>
             <div class="col-sm-2">
-                <% if (product[i] && images[i][0]){%>
+                <% if (product[i] && images[i][0]){ %>
                     <a href="/product?id=<%= product[i].id %>">
                         <img src="<%= images[i][0].imageUrl %>"
                              width="110" height="80">
                     </a>
-                <%}%>
+                <% } %>
             </div>
             <div class="col-sm-2 border-right">
                 <a href="/product?id=<%= product[i].id %>" class="card-title"><%= product[i].name %></a>
@@ -111,7 +111,7 @@
         <% for (let i = 0; i < 8; i++) { %>
             <div class="col-md-3">
                 <figure class="card card-product-grid">
-                    <% if (product[i] && images[i][0]){%>
+                    <% if (product[i] && images[i][0]){ %>
                         <div class="img-wrap"><img src="<%= images[i][0].imageUrl %>"></div>
                         <figcaption class="info-wrap border-top">
                             <a href="/product?id=<%= product[i]._id %>" class="title"><%= product[i].name %></a>
@@ -144,9 +144,9 @@
                             <% if (ProductNew[j].status){ %>
                                 <div class="col-sm-3 border-right card-newsp">
                                     <a href="/product?id=<%= ProductNew[j]._id %>">
-                                        <% if (product[i] && images[i][0]){%>
+                                        <% if (product[i] && images[i][0]){ %>
                                             <img src="<%= imagesNew[j][0].imageUrl %>"
-                                                width="140px" height="140px" class="center pic-1">
+                                                 width="140px" height="140px" class="center pic-1">
                                         <% } %>
                                     </a>
                                     <p align="center" class="name-spnew"><%= ProductNew[j].name %></p>
@@ -181,19 +181,10 @@
                     <div class="row container card-bg border-bottom border-right border-left shadow-sm">
                         <% for(let j = i * 4; j < i * 4 + 4; j++){ %>
                             <div class="col-sm-3 border-right card-newsp">
-<<<<<<< HEAD
                                 <a href="/product?id=<%= product[j]._id %>">
                                     <img src="<%= images[j][0].imageUrl %>"
                                          width="140px" height="140px" class="center pic-1">
                                 </a>
-=======
-                                <% if (product[i] && images[i][0]){%>
-                                    <a href="/product?id=<%= product[i]._id %>">
-                                        <img src="<%= images[j][0].imageUrl %>"
-                                             width="140px" height="140px" class="center pic-1">
-                                    </a>
-                                <% } %>
->>>>>>> c4afc111cf7d1d05768ba4c068ddbc7fcf21fe26
                                 <p align="center" class="name-spnew"><%= product[j].name %></p>
                                 <p align="center" class="card-title"><%= product[j].description %></p>
                                 <p align="center" class="card-text">$<%= product[j].price %></p>
