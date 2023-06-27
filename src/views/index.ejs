@@ -168,11 +168,11 @@
     <p class="title-newsp" align="center">Gợi ý </p>
     <div id="carouselExampleControls2" class="carousel slide2 " data-ride="carousel">
         <div class="carousel-inner container">
-            <% for(let i = 0 ; i < product.length / 4; i++){ %>
+            <% for(let i = 0 ; i < Math.floor(product.length / 4); i++){ %>
 
                 <div class="carousel-item <% if (i === 0){ %> active<% } %>">
                     <div class="row container card-bg border-bottom border-right border-left shadow-sm">
-                        <% for(let j = i ; j < i + 4; j++){ %>
+                        <% for(let j = i * 4; j < i * 4 + 4; j++){ %>
                             <div class="col-sm-3 border-right card-newsp">
                                 <a href="/product?id=<%= product[i]._id %>">
                                     <img src="<%= images[Math.floor(Math.random() * 10)][0].imageUrl %>"
