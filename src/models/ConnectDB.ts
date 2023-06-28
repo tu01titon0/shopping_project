@@ -7,8 +7,8 @@ import {Image} from "./schemas/image.model";
 
 export class ConnectDB {
     async connect() {
-        // await mongoose.connect('mongodb://127.0.0.1:27017/shopping_project');
-        await mongoose.connect('mongodb+srv://tu01titon0:Tu123@cluster0.s5zm4tu.mongodb.net/');
+        await mongoose.connect('mongodb://127.0.0.1:27017/shopping_project');
+        // await mongoose.connect('mongodb+srv://tu01titon0:Tu123@cluster0.s5zm4tu.mongodb.net/');
 
 //         async function createDummyData() {
 //             try {

@@ -155,7 +155,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Import jQuery từ CDN -->
 <script>
     // Lắng nghe sự kiện submit form
-    $('#myForm').submit(function(event) {
+    $('.myForm').submit(function(event) {
 
         event.preventDefault(); // Ngăn chặn việc tải lại trang
         const formData = $(this).serialize(); // Chuyển đổi dữ liệu form thành chuỗi query string

@@ -3,7 +3,6 @@ import e from "express";
 
 export class CartController {
     static async addProductToCart(req, res) {
-        console.log(req.body);
         if (req.user) {
             let cart = await productCart.findOne({user_id: req.user.id})
             let newCart
@@ -15,7 +14,6 @@ export class CartController {
             }
             newCart.product_id.push(req.body.productID);
             await newCart.save();
-            console.log()
             res.send(`${cart.product_id.length}`);
         } else {
             res.render('/login')
