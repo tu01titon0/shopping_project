@@ -1,13 +1,14 @@
 import express from "express";
-import { Router } from "express"
-import passport from "../middlewares/login.middlewares";
+import {Router} from "express"
+import passport from "../middlewares/home.middlewares";
+
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
-import {UserController} from "../controllers/user.controller";
+
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
 
@@ -36,9 +37,8 @@ router.get('/list_category', AdminController.createCategory)
 
 router.post('/add_to_cart', CartController.addProductToCart);
 
-router.post('/add_to_cart', CartController.addProductToCart);
-
 router.get('/cart', CartController.getCartPage);
+
 router.get('/me-profile',  UserController.getEditUsers);
 router.post('/me-profile', UserController.postEditUsers);
 router.get('/me-change-password', UserController.getChangePassword);
@@ -46,10 +46,9 @@ router.post('/me-change-password', UserController.postChangePassword);
 
 
 
-
 router.get(
     '/login/google',
-    passport.authenticate('google', { scope: ['profile', 'email'] })
+    passport.authenticate('google', {scope: ['profile', 'email']})
 );
 router.get(
     '/google/callback',
@@ -60,7 +59,18 @@ router.get(
         res.send('You are authenticated');
     }
 );
-router.get('*', function (req, res){
+
+router.get('/login/facebook', passport.authenticate('facebook', {scope: ['profile', 'email']}));
+
+router.get(
+    "/facebook/callback",
+    passport.authenticate('facebook', {failureRedirect: '/login'}),
+    (req, res) => {
+        res.redirect('/');
+    }
+);
+
+router.get('*', function (req, res) {
     res.render('notfound')
 });
 export default router
