@@ -14,9 +14,9 @@ export class CartController {
             }
             newCart.product_id.push(req.body.productID);
             await newCart.save();
-            res.redirect('/cart');
+            res.send(`${cart.product_id.length}`);
         } else {
-            res.redirect('/login');
+            res.render('/login')
         }
     }
 

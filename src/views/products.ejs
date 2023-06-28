@@ -15,6 +15,11 @@
     <div class="row">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
+                <li class="page-item <% if (currentPage === 1) { %> d-none <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=1">
+                        Trang đầu
+                    </a></li>
                 <li class="page-item <% if (currentPage === 1) { %> disabled <% } %>">
                     <a class="page-link"
                        href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
@@ -22,17 +27,27 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <% for (let i = 1; i <= numberPage; i++) { %>
-                    <li class="page-item"><a class="page-link"
-                                             href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
-                            <%= i %>
-                        </a></li>
+                <% for (let i = currentPage - 2; i <= currentPage + 7; i++) { %>
+                    <% if(i > 0 && i <= numberPage) { %>
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="/search?keyword=<%= keywordSearch %>&page=<%= i %>">
+                                <%= i %>
+                            </a>
+                        </li>
+                    <% } %>
                 <% } %>
                 <li class="page-item <% if (currentPage === numberPage) { %> disabled <% } %>">
                     <a class="page-link"
-                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === 1 ? 1 : currentPage - 1 %>"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= currentPage === numberPage ? 1 : currentPage + 1 %>"
                        aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item <% if (currentPage === numberPage) { %> d-none <% } %>">
+                    <a class="page-link"
+                       href="/search?keyword=<%= keywordSearch %>&page=<%= numberPage %>">
+                        Trang cuối
                     </a>
                 </li>
             </ul>
@@ -82,7 +97,11 @@
                                     </div>
                                 </div>  <!-- input-spinner.// -->
                             </div> <!-- col.// -->
-                            <form action="/add_to_cart" method="post">
+<!--<<<<<<< HEAD-->
+<!--                            <form action="/add_to_cart" method="post">-->
+<!--=======-->
+                            <form class="myForm">
+<!--&gt;>>>>>> 0fd8f0953161cd9ce3b3b5847e5e1646befeba09-->
                                 <input type="text" hidden name="productID" value="<%= product._id %>">
                                 <div class="form-group col-md">
                                     <button type="submit" class="btn btn-primary">

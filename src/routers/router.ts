@@ -1,6 +1,6 @@
 import express from "express";
 import { Router } from "express"
-import passport from "../middlewares/home.middlewares";
+import passport from "../middlewares/login.middlewares";
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
@@ -8,10 +8,6 @@ import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
-import bodyParser from "body-parser";
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
-
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
 
@@ -40,25 +36,28 @@ router.get('/list_category', AdminController.createCategory)
 
 router.post('/add_to_cart', CartController.addProductToCart);
 
+router.post('/add_to_cart', CartController.addProductToCart);
+
 router.get('/cart', CartController.getCartPage);
 router.get('/me-profile',  UserController.getEditUsers);
 router.post('/me-profile', UserController.postEditUsers);
 
 
 
-// router.get(
-//     '/login/google',
-//     passport.authenticate('google', { scope: ['profile', 'email'] })
-// );
-// router.get(
-//     '/google/callback',
 
-//     passport.authenticate('google'),
+router.get(
+    '/login/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+router.get(
+    '/google/callback',
 
-//     (req, res) => {
-//         res.send('You are authenticated');
-//     }
-// );
+    passport.authenticate('google'),
+
+    (req, res) => {
+        res.send('You are authenticated');
+    }
+);
 router.get('*', function (req, res){
     res.render('notfound')
 });
