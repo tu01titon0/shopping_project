@@ -28,7 +28,7 @@ class HomeController {
     }
 
     static getRegisterPage(req: any, res: any): any {
-        res.render('register', {user: req.user || undefined})
+        res.render('register', {user: req.user || undefined, messages: req.flash('registerReject')});
     }
 
     static async postRegisterPage(req: any, res: any) {
@@ -47,7 +47,8 @@ class HomeController {
                 res.redirect('/')
 
             } else {
-                res.render('register')
+                req.flash('registerReject', 'Tên đăng nhập đã tồn tại! Vui lòng nhập tên đăng nhập khác.');
+                res.redirect('/register');
             }
         } catch (err) {
             console.log(err.message);
