@@ -41,6 +41,8 @@ router.post('/add_to_cart', CartController.addProductToCart);
 router.get('/cart', CartController.getCartPage);
 router.get('/me-profile',  UserController.getEditUsers);
 router.post('/me-profile', UserController.postEditUsers);
+router.get('/me-change-password', UserController.getChangePassword);
+router.post('/me-change-password', UserController.postChangePassword);
 
 
 
