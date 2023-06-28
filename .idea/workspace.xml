@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
+    <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="done product detail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/admin.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cart.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/sale.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/sale.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/views/products.ejs" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,9 +51,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "editUser",
-    "javascript.nodejs.core.library.configured.version": "18.14.0",
-    "javascript.nodejs.core.library.typings.version": "18.14.0",
-    "last_opened_file_path": "C:/casemodule4",
+    "javascript.nodejs.core.library.configured.version": "16.13.0",
+    "javascript.nodejs.core.library.typings.version": "16.18.37",
+    "last_opened_file_path": "/Users/macos/Documents/codegym/shopping_project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,6 +112,7 @@
       <workItem from="1687836619329" duration="60000" />
       <workItem from="1687836720666" duration="431000" />
       <workItem from="1687837185659" duration="514000" />
+      <workItem from="1687939133885" duration="1620000" />
     </task>
     <servers />
   </component>

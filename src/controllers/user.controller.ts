@@ -20,6 +20,7 @@ export class UserController {
             const currentUser = await user.findOne({_id: req.user.id});
             if (currentUser) {
                 await currentUser.updateOne({...req.body});
+                req.user = currentUser
                 res.redirect('/me-profile');
             }
         } catch (err) {

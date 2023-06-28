@@ -20,8 +20,6 @@ db.connect().then(r => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false}))
 
-app.use(express.static('./src/views'))
-app.use(express.static('another_static_folder'))
 app.use(express.static('./src/public'))
 app.use(session({
     secret: 'keyboard cat',
