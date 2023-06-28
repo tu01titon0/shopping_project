@@ -1,6 +1,5 @@
 import {Product} from "../models/schemas/product.model";
 import {Image} from "../models/schemas/image.model";
-import loginMiddlewares from "../middlewares/login.middlewares";
 import {user} from "../models/schemas/user.model";
 
 class HomeController {
@@ -11,7 +10,14 @@ class HomeController {
             const ProductNew = await Product.find().sort({"created_at": -1})
             const images = await Promise.all(products.map(product => Image.find({product_id: product._id})))
             const imagesNew = await Promise.all(ProductNew.map(product => Image.find({product_id: product._id})))
-            return res.render('index', {user: req.user, product: products, images, ProductNew, imagesNew});
+            return res.render('index', {
+                user: req.user,
+                product: products,
+                images,
+                ProductNew,
+                imagesNew,
+                messages: req.flash('registerSuccess')
+            });
         } catch (err) {
             console.log(err)
         }
@@ -37,6 +43,7 @@ class HomeController {
                     role: 'user'
                 })
                 await newUser.save()
+                req.flash('registerSuccess', 'Đăng ký thành công! Vui lòng đăng nhập.');
                 res.redirect('/')
 
             } else {

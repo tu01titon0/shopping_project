@@ -1,4 +1,3 @@
-import express from "express";
 import {Router} from "express"
 import passport from "../middlewares/home.middlewares";
 
@@ -10,8 +9,8 @@ import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
 
-router.get('/', ensureAuthenticated, HomeController.getHomePage)
-router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
+router.get('/', HomeController.getHomePage)
+router.get('/ProfileUser', ensureAuthenticated, ProfileUserController.getManagerUserPage)
 
 router.get('/login', HomeController.getLoginPage);
 
@@ -27,14 +26,14 @@ router.get('/product', ProductController.productDetail);
 
 router.get('/search', ProductController.searchProducts);
 
-router.get('/new_product', AdminController.newProduct);
-router.post('/new_product', AdminController.createProduct)
+router.get('/new_product', ensureAuthenticated, AdminController.newProduct);
+router.post('/new_product', ensureAuthenticated, AdminController.createProduct)
 
-router.get('/new_category', AdminController.newCategory)
-router.post('/new_category', AdminController.createCategory)
+router.get('/new_category', ensureAuthenticated, AdminController.newCategory)
+router.post('/new_category', ensureAuthenticated, AdminController.createCategory)
 
-router.get('/list_product', AdminController.showProducts)
-router.get('/list_category', AdminController.createCategory)
+router.get('/list_product', ensureAuthenticated, AdminController.showProducts)
+router.get('/list_category', ensureAuthenticated, AdminController.createCategory)
 
 router.post('/add_to_cart', CartController.addProductToCart);
 
@@ -53,19 +52,17 @@ router.get(
     }
 );
 
-// Đăng nhập bằng Facebook
 router.get('/auth/facebook', passport.authenticate('facebook'));
 
-// Xử lý callback sau khi đăng nhập thành công
 router.get('/auth/facebook/callback',
     passport.authenticate('facebook', {successRedirect: '/', failureRedirect: '/login'})
 );
 
 function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated() && req.user.role === 'admin') {
         return next();
     }
-    res.redirect('/login');
+    res.redirect('/');
 }
 
 router.get('*', function (req, res) {

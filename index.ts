@@ -1,11 +1,11 @@
 import express = require('express');
 import bodyParser from "body-parser";
-import path from "path";
 import router from "./src/routers/router";
 import {ConnectDB} from "./src/models/ConnectDB";
 import passport from "passport";
 import session from "express-session";
 import livereload from "connect-livereload";
+import flash from "connect-flash";
 
 const app = express();
 const port = 2759
@@ -18,23 +18,22 @@ db.connect().then(r => {
 })
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended : false}))
+app.use(bodyParser.urlencoded({extended: false}))
 
-app.use(express.static('./src/views'))
-app.use(express.static('another_static_folder'))
 app.use(express.static('./src/public'))
 app.use(session({
     secret: 'keyboard cat',
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: {secure: false}
 }));
 app.use(livereload());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(flash());
 
 app.set('view engine', "ejs")
 app.set("views", "./src/views")
@@ -46,12 +45,6 @@ app.use((req: any, res: any, next: any) => {
     next();
 })
 app.use(router);
-// app.use('/',router);
-
-// viet middlewares chinh sua res
-
-
-
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
