@@ -8,8 +8,9 @@ import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
-
-
+import bodyParser from "body-parser";
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -40,8 +41,8 @@ router.get('/list_category', AdminController.createCategory)
 router.post('/add_to_cart', CartController.addProductToCart);
 
 router.get('/cart', CartController.getCartPage);
-router.get('/editUser', UserController.getEditUsers);
-router.post('/editUser', UserController.getEditUsers);
+router.get('/me-profile',  UserController.getEditUsers);
+router.post('/me-profile', UserController.postEditUsers);
 
 
 
