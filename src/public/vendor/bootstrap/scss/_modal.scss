@@ -136,12 +136,12 @@
   &.show { opacity: $modal-backdrop-opacity; }
 }
 
-// Modal header
+// Modal header.ejs
 // Top section of the modal w/ title and dismiss
 .modal-header {
   display: flex;
   align-items: flex-start; // so the close btn always stays on the upper right corner
-  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  justify-content: space-between; // Put modal header.ejs elements (title and dismiss) on opposite ends
   padding: $modal-header-padding;
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
   @include border-top-radius($modal-content-inner-border-radius);
@@ -153,14 +153,14 @@
   }
 }
 
-// Title text within header
+// Title text within header.ejs
 .modal-title {
   margin-bottom: 0;
   line-height: $modal-title-line-height;
 }
 
 // Modal body
-// Where all modal content resides (sibling of .modal-header and .modal-footer)
+// Where all modal content resides (sibling of .modal-header.ejs and .modal-footer)
 .modal-body {
   position: relative;
   // Enable `flex-grow: 1` so that the body take up as much space as possible

@@ -363,7 +363,7 @@ p:last-child {
   direction: ltr; }
 
 /* ================== SECTIONS =================== */
-/* ================== header main ==================  */
+/* ================== header.ejs main ==================  */
 .header-top-light .nav-link {
   color: #969696; }
   .header-top-light .nav-link:hover {

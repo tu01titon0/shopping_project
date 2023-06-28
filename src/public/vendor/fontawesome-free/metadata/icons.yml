@@ -9903,7 +9903,7 @@ heading:
   search:
     terms:
       - format
-      - header
+      - header.ejs
       - text
       - title
   styles:

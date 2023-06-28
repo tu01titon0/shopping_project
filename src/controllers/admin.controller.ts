@@ -2,13 +2,13 @@ import {Product} from "../models/schemas/product.model";
 import {Category} from "../models/schemas/category.model";
 
 import {Image} from "../models/schemas/image.model";
+import {user} from "../models/schemas/user.model";
 
 export class AdminController {
     static async newProduct(req, res) {
         const categories = await Category.find();
         res.render('admin/newProduct', {user: req.user, categories: categories});
     }
-
     static  async newCategory(req, res) {
         res.render('admin/newCategory', {user: req.user});
     }
@@ -28,7 +28,6 @@ export class AdminController {
             res.redirect('/new_product')
         }
     }
-
     static async createCategory(req, res) {
         const category = new Category(req.body);
         if (await category.save()){
@@ -37,9 +36,14 @@ export class AdminController {
             res.redirect('/new_category')
         }
     }
-
     static  async showProducts(req, res) {
         const  products = await Product.find();
         res.render('admin/listProduct', { products })
     }
+    static async getListUsers(req,res){
+        const listUser = await user.find()
+        console.log(listUser)
+        res.render('admin/listUser', {listUser:listUser})
+    }
+
 }
