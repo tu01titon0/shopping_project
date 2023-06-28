@@ -82,18 +82,18 @@
 
 
                         <div class="form-row">
-                            <div class="form-group col-md flex-grow-0">
-                                <div class="input-group input-spinner">
-                                    <div class="input-group-prepend">
-                                        <button class="btn btn-light" type="button" id="button-plus"> +</button>
-                                    </div>
-                                    <input type="text" class="form-control" value="1">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-light" type="button" id="button-minus"> −</button>
-                                    </div>
-                                </div>  <!-- input-spinner.// -->
-                            </div> <!-- col.// -->
                             <form class="myForm">
+                                <div class="form-group col-md flex-grow-0">
+                                    <div class="qty-input input-group input-spinner">
+                                        <div class="input-group-prepend">
+                                            <button class="qty-count qty-count--minus btn btn-light" id="minus-<%=product._id%>" data-action="minus" type="button">-</button>
+                                        </div>
+                                        <input class="product-qty form-control number" id="number-<%=product._id%>" type="text" name="quantity" min="1" max="10" value="1">
+                                        <div class="input-group-prepend">
+                                            <button class="qty-count qty-count--add btn btn-light" id="plus-<%=product._id%>" data-action="add" type="button">+</button>
+                                        </div>
+                                    </div>
+                                </div> <!-- col.// -->
                                 <input type="text" hidden name="productID" value="<%= product._id %>">
                                 <div class="form-group col-md">
                                     <button type="submit" class="btn btn-primary">

@@ -6,6 +6,7 @@ import {ConnectDB} from "./src/models/ConnectDB";
 import passport from "passport";
 import session from "express-session";
 import livereload from "connect-livereload";
+import {productCart} from "./src/models/schemas/productCart.model";
 
 const app = express();
 const port = 2759
@@ -35,12 +36,19 @@ app.use(passport.session());
 app.set('view engine', "ejs")
 app.set("views", "./src/views")
 
-app.use((req: any, res: any, next: any) => {
+app.use(async (req: any, res: any, next: any) => {
     if (req.isAuthenticated()) {
-        res.locals.userLogin = req.user;
+        try {
+            const cart = await productCart.findOne({ user_id: req.user.id }).exec();
+            const totalQuantity = cart ? cart.products.reduce((total, item) => total + item.quantity, 0) : 0;
+            res.locals.userLogin = req.user;
+            res.locals.carttotal = totalQuantity;
+        } catch (error) {
+            console.error("Error fetching cart:", error);
+        }
     }
     next();
-})
+});
 app.use(router);
 // app.use('/',router);
 

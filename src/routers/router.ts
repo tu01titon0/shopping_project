@@ -9,6 +9,7 @@ import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
+import DiscountController from "../controllers/discount.controller";
 
 router.get('/', ensureAuthenticated, HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -36,9 +37,14 @@ router.post('/new_category', AdminController.createCategory)
 router.get('/list-product', AdminController.showProducts)
 router.get('/list-category', AdminController.showCategories)
 
-router.post('/add_to_cart', CartController.addProductToCart);
-
+router.post('/add-to-cart', CartController.addProductToCart);
 router.get('/cart', CartController.getCartPage);
+router.post('/delete-product-cart', CartController.deleteProductCart);
+router.get('/new-discount', DiscountController.getDiscount);
+router.post('/new-discount', DiscountController.createDiscount);
+router.get('/list-discount', DiscountController.getListDiscount);
+router.post('/check-discount-code', DiscountController.checkDisCountCode);
+
 
 router.get('/me-profile',  UserController.getEditUsers);
 router.post('/me-profile', UserController.postEditUsers);
@@ -52,6 +58,7 @@ router.post('/editProduct/:id', AdminController.editProduct);
 router.get('/deleteCategory/:id', AdminController.deleteCategory);
 router.get('/editCategory/:id', AdminController.showEditCategory);
 router.post('/editCategory/:id', AdminController.editCategory);
+
 
 
 router.get('/login/google', passport.authenticate('google', {scope: ['profile', 'email']}));

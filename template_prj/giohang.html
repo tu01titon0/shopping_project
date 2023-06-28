@@ -220,14 +220,15 @@
         <aside class="col-lg-3">
           <div class="card mb-3">
             <div class="card-body">
-              <form>
+              <form class="myForm">
                 <div class="form-group">
                   <label>Nhập mã khuyến mại</label>
+                  <div class="result">
                   <div class="input-group">
                     <input
                       type="text"
                       class="form-control"
-                      name=""
+                      name="code"
                       placeholder="Mã"
                     />
                     <span class="input-group-append">
@@ -395,4 +396,27 @@
   </footer>
 </body>
   <script src="js/giohang.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Import jQuery từ CDN -->
+  <script>
+    // Lắng nghe sự kiện submit form
+    $('.myForm').submit(function(event) {
+      console.log(123123)
+      event.preventDefault(); // Ngăn chặn việc tải lại trang
+      const formData = $(this).serialize(); // Chuyển đổi dữ liệu form thành chuỗi query string
+      const url = '/check-discount-code'; // Đường dẫn API xử lý dữ liệu (thay đổi theo yêu cầu)
+
+      // Gửi yêu cầu POST đến máy chủ Node.js
+      $.post(url, formData)
+              .done(function(response) {
+                if (response == 0) {
+                  $('.result').text('Mã giảm giá không đúng')
+                } else {
+                  $('.result').text('Bạn được giảm' + response + "%")
+                }
+              })
+              .fail(function(error) {
+                console.error(error.message);
+              });
+    });
+  </script>
 </html>

@@ -60,7 +60,6 @@ export class AdminController {
 
     static async showEditCategory(req, res) {
         const category = await Category.findOne({_id: req.params.id})
-        console.log(category)
         res.render('admin/editCategory', { category })
     }
 

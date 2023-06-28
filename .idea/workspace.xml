@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="done product detail">
+      <change afterPath="$PROJECT_DIR$/src/controllers/discount.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/schemas/discount.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/admin.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cart.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ConnectDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ConnectDB.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/orderDetail.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/orderDetail.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/product.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/product.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/schemas/productCart.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/productCart.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/giohang.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/giohang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_prj/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/template_prj/giohang.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/views/products.ejs" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/views/products.ejs" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -112,7 +122,7 @@
       <workItem from="1687836619329" duration="60000" />
       <workItem from="1687836720666" duration="431000" />
       <workItem from="1687837185659" duration="514000" />
-      <workItem from="1687939133885" duration="1620000" />
+      <workItem from="1687939133885" duration="26563000" />
     </task>
     <servers />
   </component>
