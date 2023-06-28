@@ -8,8 +8,9 @@ import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
+import {UserController} from "../controllers/user.controller";
 
-router.get('/', HomeController.getHomePage)
+router.get('/', ensureAuthenticated, HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
 
 router.get('/login', HomeController.getLoginPage);
@@ -39,30 +40,33 @@ router.post('/add_to_cart', CartController.addProductToCart);
 
 router.get('/cart', CartController.getCartPage);
 
+router.get('/me-profile', UserController.getEditUsers);
 
+router.post('/me-profile', UserController.postEditUsers);
+
+router.get('/login/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 router.get(
-    '/login/google',
-    passport.authenticate('google', {scope: ['profile', 'email']})
-);
-router.get(
-    '/google/callback',
-
-    passport.authenticate('google'),
-
-    (req, res) => {
-        res.send('You are authenticated');
-    }
-);
-
-router.get('/login/facebook', passport.authenticate('facebook', {scope: ['profile', 'email']}));
-
-router.get(
-    "/facebook/callback",
-    passport.authenticate('facebook', {failureRedirect: '/login'}),
+    "/google/callback",
+    passport.authenticate('google', {failureRedirect: '/login'}),
     (req, res) => {
         res.redirect('/');
     }
 );
+
+// Đăng nhập bằng Facebook
+router.get('/auth/facebook', passport.authenticate('facebook'));
+
+// Xử lý callback sau khi đăng nhập thành công
+router.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {successRedirect: '/', failureRedirect: '/login'})
+);
+
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/login');
+}
 
 router.get('*', function (req, res) {
     res.render('notfound')
