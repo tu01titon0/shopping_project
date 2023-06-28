@@ -25,7 +25,7 @@ app.use(express.static('another_static_folder'))
 app.use(express.static('./src/public'))
 app.use(session({
     secret: 'keyboard cat',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: { secure: false }
 }));
