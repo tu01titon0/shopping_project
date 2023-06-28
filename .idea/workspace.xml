@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/home.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/home.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +69,7 @@
       <recent name="$PROJECT_DIR$/src/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\shopping_project\src\views\general" />
       <recent name="D:\demo\src" />
     </key>
   </component>

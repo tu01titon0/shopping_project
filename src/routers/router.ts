@@ -8,6 +8,7 @@ import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
 import {CartController} from "../controllers/cart.controller";
+import {UserController} from "../controllers/user.controller";
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
