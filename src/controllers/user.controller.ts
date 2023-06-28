@@ -26,4 +26,21 @@ export class UserController {
             console.log("-------------" + err);
         }
     }
+    static async getChangePassword(req, res) {
+        if (req.user){
+            res.render('user/changePass',{user: req.user})
+        }else {
+            res.redirect("/")
+        }
+    }
+    static async postChangePassword(req, res) {
+        const currentUser = await user.findOne({_id: req.user.id});
+        if (currentUser.password === req.body.currentPassword){
+            await currentUser.updateOne({...req.body});
+            res.redirect('/');
+        }
+        else {
+            res.redirect('/me-change-password')
+        }
+    }
 }

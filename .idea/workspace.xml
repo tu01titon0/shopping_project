@@ -6,39 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ejs" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/glob" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/glob" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/jake" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/jake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mime" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mkdirp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mkdirp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/node-which" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/node-which" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ps-tree" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ps-tree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rimraf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/rimraf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc-watch" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc-watch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ejs/bin/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ejs/lib/ejs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ejs/lib/ejs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob/dist/cjs/src/bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob/dist/cjs/src/bin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jake/bin/bash_completion.sh" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jake/bin/bash_completion.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jake/bin/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jake/bin/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/bin/cmd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/bin/cmd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ps-tree/bin/ps-tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ps-tree/bin/ps-tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ps-tree/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ps-tree/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/dist/cjs/src/bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/dist/cjs/src/bin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tsc/bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tsc/bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/which/bin/node-which" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/which/bin/node-which" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cart.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/home.middlewares.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/login.middlewares.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/login.middlewares.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/schemas/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/schemas/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging editUser",
+    "git-widget-placeholder": "editUser",
     "javascript.nodejs.core.library.configured.version": "18.14.0",
     "javascript.nodejs.core.library.typings.version": "18.14.0",
     "last_opened_file_path": "C:/casemodule4",
