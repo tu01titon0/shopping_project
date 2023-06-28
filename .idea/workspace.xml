@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aa2d2fa0-9bcd-466f-b441-762e2adce596" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/admin.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/cart.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/cart.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/css/sale.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/sale.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +60,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\shopping_project\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/macos/Documents/codegym/shopping_project/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,6 +74,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\demo\src" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="src/views/products.ejs" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

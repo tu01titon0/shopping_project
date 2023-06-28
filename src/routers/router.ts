@@ -7,7 +7,9 @@ import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
 import {ProductController} from "../controllers/product.controller";
 import {AdminController} from "../controllers/admin.controller";
-import {CartController} from "../controllers/cart.controller";
+import {CartController} from "../controllers/cart.controller"
+import {UserController} from "../controllers/user.controller"
+;
 
 router.get('/', HomeController.getHomePage)
 router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
@@ -26,14 +28,14 @@ router.get('/product', ProductController.productDetail);
 
 router.get('/search', ProductController.searchProducts);
 
-router.get('/new_product', AdminController.newProduct);
-router.post('/new_product', AdminController.createProduct)
+router.get('/new-product', AdminController.newProduct);
+router.post('/new-product', AdminController.createProduct)
 
 router.get('/new_category', AdminController.newCategory)
 router.post('/new_category', AdminController.createCategory)
 
-router.get('/list_product', AdminController.showProducts)
-router.get('/list_category', AdminController.createCategory)
+router.get('/list-product', AdminController.showProducts)
+router.get('/list-category', AdminController.showCategories)
 
 router.post('/add_to_cart', CartController.addProductToCart);
 
@@ -43,6 +45,14 @@ router.get('/me-profile',  UserController.getEditUsers);
 router.post('/me-profile', UserController.postEditUsers);
 router.get('/me-change-password', UserController.getChangePassword);
 router.post('/me-change-password', UserController.postChangePassword);
+router.get('/deleteProduct/:id', AdminController.deleteProduct);
+
+router.get('/editProduct/:id', AdminController.showEditProduct);
+router.post('/editProduct/:id', AdminController.editProduct);
+
+router.get('/deleteCategory/:id', AdminController.deleteCategory);
+router.get('/editCategory/:id', AdminController.showEditCategory);
+router.post('/editCategory/:id', AdminController.editCategory);
 
 
 

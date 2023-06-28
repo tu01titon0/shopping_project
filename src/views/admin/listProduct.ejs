@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 
@@ -149,14 +150,11 @@
                                 <td><%= product.quantity %></td>
                                 <td><%= product.description %></td>
                                 <td>
-                                    <a href="/editProduct/:<%=product._id%>" class="btn btn-primary">Edit Product</a>
-                                    <a href="/uploadImage/:<%=product._id%>" class="btn btn-info">Upload images</a>
-                                    <a href="/deleteProduct/:<%=product._id%>" class="btn btn-danger">Delete Product</a>
+                                    <a href="/editProduct/<%=product._id%>" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/deleteProduct/r<%=product._id%>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger" ><i class="fa-solid fa-trash-can"></i></a>
                                 </td>
                             </tr>
                         <% }) %>
-
-
                     </tbody>
                 </table>
             </div>
