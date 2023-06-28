@@ -6,6 +6,7 @@ import {Image} from "../models/schemas/image.model";
 import {Category} from "../models/schemas/category.model";
 import {productCart} from "../models/schemas/productCart.model";
 import GoogleStrategy from "passport-google-oauth20";
+import bcrypt from "bcrypt";
 
 const FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -30,7 +31,8 @@ passport.use(new LocalStrategy(async function verify(username: string, password:
     if (!User) {
         return cb(null, false, {message: 'Incorrect username or password.'});
     }
-    if (User.password !== password) {
+    const comparePass = await bcrypt.compare(password, User.password);
+    if (!comparePass) {
         return cb(null, false, {message: 'Incorrect username or password.'});
     }
     return cb(null, User);

@@ -1,6 +1,7 @@
 import {Product} from "../models/schemas/product.model";
 import {Image} from "../models/schemas/image.model";
 import {user} from "../models/schemas/user.model";
+import bcrypt from "bcrypt";
 
 class HomeController {
     static async getHomePage(req: any, res: any) {
@@ -35,9 +36,10 @@ class HomeController {
         try {
             const userName = await user.findOne({userName: req.body.username})
             if (!userName) {
+                const passwordHash = await bcrypt.hash(req.body.password, 10);
                 const newUser = new user({
                     userName: req.body.username,
-                    password: req.body.password,
+                    password: passwordHash,
                     address: req.body.address,
                     email: req.body.mail,
                     role: 'user'
