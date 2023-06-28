@@ -1,6 +1,7 @@
 import express from "express";
-import { Router } from "express"
+import {Router} from "express"
 import passport from "../middlewares/home.middlewares";
+
 const router = Router()
 import HomeController from "../controllers/home.controller";
 import ProfileUserController from "../controllers/profileUser.controller";
@@ -41,7 +42,7 @@ router.get('/cart', CartController.getCartPage);
 
 router.get(
     '/login/google',
-    passport.authenticate('google', { scope: ['profile', 'email'] })
+    passport.authenticate('google', {scope: ['profile', 'email']})
 );
 router.get(
     '/google/callback',
@@ -52,7 +53,18 @@ router.get(
         res.send('You are authenticated');
     }
 );
-router.get('*', function (req, res){
+
+router.get('/login/facebook', passport.authenticate('facebook', {scope: ['profile', 'email']}));
+
+router.get(
+    "/facebook/callback",
+    passport.authenticate('facebook', {failureRedirect: '/login'}),
+    (req, res) => {
+        res.redirect('/');
+    }
+);
+
+router.get('*', function (req, res) {
     res.render('notfound')
 });
 export default router
