@@ -5,7 +5,6 @@ import {Product} from "../models/schemas/product.model";
 import {Image} from "../models/schemas/image.model";
 import {Category} from "../models/schemas/category.model";
 import {productCart} from "../models/schemas/productCart.model";
-import GoogleStrategy from "passport-google-oauth20";
 
 const FacebookStrategy = require('passport-facebook').Strategy;
 import GoogleStrategy from "passport-google-oauth20";

@@ -78,6 +78,15 @@ router.get('/auth/facebook/callback',
     passport.authenticate('facebook', {successRedirect: '/', failureRedirect: '/login'})
 );
 
+router.get('/logout', (req, res, next) => {
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/login');
+    });
+});
+
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next();

@@ -74,23 +74,20 @@
                             <% if(locals.userLogin.role === "admin"){ %>
                                 <a class="dropdown-item" href="/ProfileUser">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    AdminPages
                                 </a>
                             <% } %>
                             <a class="dropdown-item" href="/me-profile">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                edit information user
+                                Profile
                             </a>
                             <a class="dropdown-item" href="/me-change-password">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Change password
                             </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
-                            </a>
+
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/login">
+                            <a class="dropdown-item" href="/logout">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
