@@ -28,21 +28,21 @@ router.get('/product', ProductController.productDetail);
 
 router.get('/search', ProductController.searchProducts);
 
-router.get('/new-product', AdminController.newProduct);
-router.post('/new-product', AdminController.createProduct)
+router.get('/new-product', ensureAuthenticated, AdminController.newProduct);
+router.post('/new-product', ensureAuthenticated, AdminController.createProduct)
 
 router.get('/new-category', ensureAuthenticated, AdminController.newCategory)
 router.post('/new-category', ensureAuthenticated, AdminController.createCategory)
 
-router.get('/list-product', AdminController.showProducts)
-router.get('/list-category', AdminController.showCategories)
+router.get('/list-product', ensureAuthenticated, AdminController.showProducts)
+router.get('/list-category', ensureAuthenticated, AdminController.showCategories)
 
 router.post('/add-to-cart', CartController.addProductToCart);
 router.get('/cart', CartController.getCartPage);
 router.post('/delete-product-cart', CartController.deleteProductCart);
-router.get('/new-discount', DiscountController.getDiscount);
-router.post('/new-discount', DiscountController.createDiscount);
-router.get('/list-discount', DiscountController.getListDiscount);
+router.get('/new-discount', ensureAuthenticated, DiscountController.getDiscount);
+router.post('/new-discount', ensureAuthenticated, DiscountController.createDiscount);
+router.get('/list-discount', ensureAuthenticated, DiscountController.getListDiscount);
 router.post('/check-discount-code', DiscountController.checkDisCountCode);
 
 
