@@ -31,8 +31,8 @@ router.get('/search', ProductController.searchProducts);
 router.get('/new-product', AdminController.newProduct);
 router.post('/new-product', AdminController.createProduct)
 
-router.get('/new_category', ensureAuthenticated, AdminController.newCategory)
-router.post('/new_category', ensureAuthenticated, AdminController.createCategory)
+router.get('/new-category', ensureAuthenticated, AdminController.newCategory)
+router.post('/new-category', ensureAuthenticated, AdminController.createCategory)
 
 router.get('/list-product', AdminController.showProducts)
 router.get('/list-category', AdminController.showCategories)

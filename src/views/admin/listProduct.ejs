@@ -144,23 +144,6 @@
                     </tr>
                     </thead>
                     <tbody>
-<<<<<<< HEAD
-                        <% products.forEach(product => { %>
-                            <tr>
-                                <td><%= product.name %></td>
-                                <td><%= product.model %></td>
-                                <td><%= product.place %></td>
-                                <td><%= product.color %></td>
-                                <td><%= product.price %></td>
-                                <td><%= product.quantity %></td>
-                                <td><%= product.description %></td>
-                                <td>
-                                    <a href="/editProduct/<%=product._id%>" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a>
-                                    <a href="/deleteProduct/r<%=product._id%>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger" ><i class="fa-solid fa-trash-can"></i></a>
-                                </td>
-                            </tr>
-                        <% }) %>
-=======
                     <% products.forEach(product => { %>
                         <tr>
                             <td><%= product.name %></td>
@@ -171,14 +154,14 @@
                             <td><%= product.quantity %></td>
                             <td><%= product.description %></td>
                             <td>
-                                <a href="/editProduct/:<%= product._id %>" class="btn btn-primary">Edit Product</a>
-                                <a href="/uploadImage/:<%= product._id %>" class="btn btn-info">Upload images</a>
-                                <a href="/deleteProduct/:<%= product._id %>" class="btn btn-danger">Delete Product</a>
+                                <a href="/editProduct/<%= product._id %>" class="btn btn-primary"><i
+                                            class="fa-solid fa-pencil"></i></a>
+                                <a href="/deleteProduct/r<%= product._id %>"
+                                   onclick="return confirm('Are you sure you want to delete this item?');"
+                                   class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     <% }) %>
-
->>>>>>> origin/messageFlash
                     </tbody>
                 </table>
             </div>
