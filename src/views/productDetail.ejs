@@ -78,30 +78,38 @@
                     </dl>
 
                     <hr>
-                    <div class="form-row">
-                        <div class="form-group col-md flex-grow-0">
-                            <label>Số lượng</label>
-                            <div class="input-group mb-3 input-spinner">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-light" type="button" id="button-plus"> +</button>
+                    <form class="myForm">
+                        <div class="form-row">
+                            <div class="form-group col-md flex-grow-0">
+                                <label>Số lượng</label>
+                                <div class="form-group col-md flex-grow-0">
+                                    <div class="qty-input input-group input-spinner">
+                                        <div class="input-group-prepend">
+                                            <button class="qty-count qty-count--minus btn btn-light" id="minus-<%=product._id%>" data-action="minus" type="button">-</button>
+                                        </div>
+                                        <input class="product-qty form-control number" id="number-<%=product._id%>" type="text" name="quantity" min="1" max="10" value="1">
+                                        <div class="input-group-prepend">
+                                            <button class="qty-count qty-count--add btn btn-light" id="plus-<%=product._id%>" data-action="add" type="button">+</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <input type="text" class="form-control" value="1">
-                                <div class="input-group-append">
-                                    <button class="btn btn-light" type="button" id="button-minus"> &minus;</button>
+                            </div> <!-- col.// -->
+                            <div class="form-group col-md">
+                                <label>Màu</label>
+                                <input type="text" hidden name="productID" value="<%= product._id %>">
+                                <div class="mt-1">
+                                    <p><%= product.color %></p>
                                 </div>
-                            </div>
-                        </div> <!-- col.// -->
-                        <div class="form-group col-md">
-                            <label>Màu</label>
-                            <div class="mt-1">
-                                <p><%= product.color %></p>
-                            </div>
-                        </div> <!-- col.// -->
-                    </div> <!-- row.// -->
+                            </div> <!-- col.// -->
+                        </div> <!-- row.// -->
 
-                    <a href="#" class="btn  btn-primary"> Mua ngay </a>
-                    <a href="#" class="btn  btn-outline-primary"> <span class="text">Thêm vào </span> <i
-                                class="fas fa-shopping-cart"></i> </a>
+                        <a href="#" class="btn  btn-primary"> Mua ngay </a>
+                        <button class="btn btn-outline-primary" type="submit">
+                            <span class="text">Thêm vào</span>
+                            <i class="fas fa-shopping-cart">
+                            </i>
+                        </button>
+                    </form>
                 </article> <!-- product-info-aside .// -->
             </main> <!-- col.// -->
         </div> <!-- row.// -->
@@ -112,6 +120,52 @@
     <%- include('footer'); -%>
 
 </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Import jQuery từ CDN -->
+<script>
+    // Lắng nghe sự kiện submit form
+    $('.myForm').submit(function(event) {
+        event.preventDefault(); // Ngăn chặn việc tải lại trang
+        const formData = $(this).serialize(); // Chuyển đổi dữ liệu form thành chuỗi query string
+        const url = '/add-to-cart'; // Đường dẫn API xử lý dữ liệu (thay đổi theo yêu cầu)
+
+        // Gửi yêu cầu POST đến máy chủ Node.js
+        $.post(url, formData)
+            .done(function(response) {
+                $(".number-cart").text(response)
+                $(`#number-${getUrlParam(formData, 'productID')}`).val(1)
+            })
+            .fail(function(error) {
+                console.error(error.message);
+            });
+    });
+    function getUrlParam(url, param) {
+        var params = url.slice(url.indexOf('?') + 1).split('&');
+        for (var i = 0; i < params.length; i++) {
+            var keyvalue = params[i].split('=');
+            if (decodeURIComponent(keyvalue[0]) === param) {
+                return decodeURIComponent(keyvalue[1]);
+            }
+        }
+    }
+
+    $(document).ready(function(){
+        $("#plus-<%=product._id%>").click(function(){
+            var val= $("#number-<%=product._id%>").val();
+            val++;
+            if(val > 0){
+                $("#number-<%=product._id%>").val(val);
+            }
+        });
+        $("#minus-<%=product._id%>").click(function(){
+            var val= $("#number-<%=product._id%>").val();
+            val--;
+            if(val > 0){
+                $("#number-<%=product._id%>").val(val);
+            }
+        })
+    });
+
+</script>
 </body>
 
 </html>

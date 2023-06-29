@@ -9,8 +9,7 @@ export class CartController {
             let cart = await productCart.findOne({ user_id: req.user.id });
             let newCart = cart || new productCart();
             let productCarts = newCart.products;
-            console.log(productCarts)
-            console.log(req.body.productID)
+            console.log(req.body)
             let existingProduct = productCarts.find(item => item.product.toString() === req.body.productID);
             console.log(existingProduct)
             let item = await Product.findOne({_id: req.body.productID})
