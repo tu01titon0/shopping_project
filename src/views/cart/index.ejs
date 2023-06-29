@@ -189,15 +189,18 @@
         // Gửi yêu cầu POST đến máy chủ Node.js
         $.post(url, formData)
             .done(function(response) {
+                let total = getSum($('.price-value'));
                 if (response == 0) {
                     $('.result').text('Mã giảm giá không đúng')
+                    $('#total-amount').text(total);
+                    $('#discoundt').text('0$');
+                    $('#total-discount').text(total);
+
                 } else {
                     $('.result').text('Bạn được giảm ' + response + "%")
-                    let total = getSum($('.price-value'));
                     $('#total-amount').text(total);
                     $('#discoundt').text((total/response)  + '$');
                     $('#total-discount').text(total - total/response);
-                    $('#discoundt').text(totalAmount / response );
                 }
             })
             .fail(function(error) {
