@@ -9,9 +9,7 @@ export class CartController {
             let cart = await productCart.findOne({ user_id: req.user.id });
             let newCart = cart || new productCart();
             let productCarts = newCart.products;
-            console.log(req.body)
             let existingProduct = productCarts.find(item => item.product.toString() === req.body.productID);
-            console.log(existingProduct)
             let item = await Product.findOne({_id: req.body.productID})
             let img = await Image.findOne({product_id: req.body.productID})
             if (existingProduct) {
@@ -38,7 +36,6 @@ export class CartController {
         }
     }
     static async deleteProductCart(req, res) {
-        console.log(req.body)
         try {
             const cart = await productCart.findOne({ user_id: req.user.id });
             const updatedProductCart = await productCart.findOneAndUpdate(
