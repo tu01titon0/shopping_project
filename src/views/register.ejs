@@ -80,10 +80,14 @@
     </section>
 </header>
 
-
 <section class="section-conten padding-y" style="min-height:84vh">
     <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
         <article id="form" class="card-body">
+            <% if (messages && messages.length > 0) { %>
+                <div class="alert alert-danger">
+                    <%= messages[0] %>
+                </div>
+            <% } %>
             <header class="mb-4">
                 <h4 class="card-title">Đăng ký</h4>
             </header>

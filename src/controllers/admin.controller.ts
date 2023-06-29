@@ -10,13 +10,14 @@ export class AdminController {
         const categories = await Category.find();
         res.render('admin/newProduct', {user: req.user, categories: categories});
     }
-    static  async newCategory(req, res) {
+
+    static async newCategory(req, res) {
         res.render('admin/newCategory', {user: req.user});
     }
     static async createProduct(req, res) {
         const arrImg = req.body.image.slice(0, -1).split(';')
         const product = new Product(req.body);
-        if (await product.save()){
+        if (await product.save()) {
             for (let i = 0; i < arrImg.length; i++) {
                 const image = new Image({
                     imageUrl: arrImg[i],
@@ -24,28 +25,29 @@ export class AdminController {
                 });
                 await image.save();
             }
-            res.redirect('/ProfileUser')
+            req.flash('createProductSuccess', 'Thêm sản phẩm thành công!');
+            res.redirect('/list-product')
         } else {
             res.redirect('/new-product')
         }
     }
     static async createCategory(req, res) {
         const category = new Category(req.body);
-        if (await category.save()){
+        if (await category.save()) {
             res.redirect('/ProfileUser')
         } else {
             res.redirect('/new_category')
         }
     }
-    static  async showProducts(req, res) {
-        const  products = await Product.find();
-        res.render('admin/listProduct', { products })
+
+    static async showProducts(req, res) {
+        const products = await Product.find();
+        res.render('admin/listProduct', {products, messages: req.flash('createProductSuccess')});
     }
 
     static  async deleteProduct(req, res) {
         try {
             await Product.findByIdAndDelete(req.params.id);
-            console.log('Sản phẩm đã được xóa thành công');
             res.redirect('/list-product')
         } catch (error) {
             console.error(error.message);

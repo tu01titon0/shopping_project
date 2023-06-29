@@ -5,19 +5,18 @@ import {Product} from "../models/schemas/product.model";
 import {Image} from "../models/schemas/image.model";
 import {Category} from "../models/schemas/category.model";
 import {productCart} from "../models/schemas/productCart.model";
+import GoogleStrategy from "passport-google-oauth20";
 
 const FacebookStrategy = require('passport-facebook').Strategy;
 import GoogleStrategy from "passport-google-oauth20";
 
 passport.serializeUser((user: any, cb) => {
-
     process.nextTick(() => {
-        cb(null, {id: user._id, username: user.userName, role: user.role});
+        cb(null, {id: user._id, username: user.userName, role: user.role, address: user.address, email: user.email});
     });
 });
 
 passport.deserializeUser((user: any, cb) => {
-
     process.nextTick(() => {
         return cb(null, user);
     });

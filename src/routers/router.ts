@@ -11,8 +11,8 @@ import {CartController} from "../controllers/cart.controller";
 import {UserController} from "../controllers/user.controller";
 import DiscountController from "../controllers/discount.controller";
 
-router.get('/', ensureAuthenticated, HomeController.getHomePage)
-router.get('/ProfileUser', ProfileUserController.getManagerUserPage)
+router.get('/', HomeController.getHomePage)
+router.get('/ProfileUser', ensureAuthenticated, ProfileUserController.getManagerUserPage)
 
 router.get('/login', HomeController.getLoginPage);
 
@@ -31,8 +31,8 @@ router.get('/search', ProductController.searchProducts);
 router.get('/new-product', AdminController.newProduct);
 router.post('/new-product', AdminController.createProduct)
 
-router.get('/new_category', AdminController.newCategory)
-router.post('/new_category', AdminController.createCategory)
+router.get('/new_category', ensureAuthenticated, AdminController.newCategory)
+router.post('/new_category', ensureAuthenticated, AdminController.createCategory)
 
 router.get('/list-product', AdminController.showProducts)
 router.get('/list-category', AdminController.showCategories)
